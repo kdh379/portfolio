@@ -1,0 +1,5 @@
+.app {
+    @apply transition-[margin-left]
+        desktop:ml-sidebar
+        duration-500;
+}

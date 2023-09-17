@@ -1,0 +1,21 @@
+{
+    "eslint.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "scss.lint.unknownAtRules": "ignore",
+    "cSpell.words": [
+        "tailwindcss",
+        "headlessui",
+        "clsx",
+        "immer",
+        "daisyui"
+    ],
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/objects",
+        ".vscode",
+        ".vscode-insiders"
+    ]
+}
