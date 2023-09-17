@@ -1,3 +1,5 @@
+import Resume from "./resume/page";
+
 export default function Home() {
-    return <main>Main Page</main>;
+    return <Resume />;
 }

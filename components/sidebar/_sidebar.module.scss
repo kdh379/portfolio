@@ -17,7 +17,11 @@
 
     > a {
         @apply cursor-pointer
-            relative;
+            relative
+            inline-flex
+            items-center
+            basis-0
+            gap-x-2;
 
 
         
