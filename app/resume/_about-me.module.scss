@@ -1,0 +1,31 @@
+.about-me {
+    @apply h-full
+        mx-auto
+        max-w-[750px]
+        flex
+        flex-col
+        justify-center;
+    
+
+    > hgroup {
+        @apply 
+            flex
+            flex-wrap
+            gap-2
+            mb-4;
+
+        > h3 {
+            @apply 
+                text-3xl
+                font-bold
+                text-accent-content;
+        }
+    }
+    
+
+    > p {
+        @apply 
+            text-xl
+            whitespace-pre-wrap;
+    }
+}

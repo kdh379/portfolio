@@ -1,12 +1,14 @@
-import { memo } from "react";
-
 import { FaUserCircle, FaCode, FaBriefcase, FaFolder, FaRegEdit, FaPhone } from "react-icons/fa";
-
-import style from "./_sidebar.module.scss";
 
 export declare type ResumeTitle = "About Me" | "Skills" | "Career" | "Projects" | "Post" | "Contact";
 
-export const resumeList = [
+interface Resume<T_Title> {
+    title: T_Title;
+    href: string;
+    icon: JSX.Element;
+}
+
+export const resumeList: Resume<ResumeTitle>[] = [
     {
         title: "About Me",
         href: "#about",
@@ -37,23 +39,18 @@ export const resumeList = [
         href: "#contact",
         icon: <FaPhone />,
     },
-] as const;
+];
 
-export const Sidebar = memo( () => {
-    return <nav className={style.sidebar}>
-        <ol>
-            {resumeList.map( ( { title, href, icon } ) => {
-                return <li key={href}
-                    className={style["sidebar__nav-item"]}>
-                    <a href={href}>
-                        {icon}
-                        {title}
-                    </a>
-                </li>;
-            } )}
-        </ol>
-    </nav>;
-} );
+export function useResumeList( ) {
+    return resumeList;
+}
 
-Sidebar.displayName = "Sidebar";
-export default Sidebar;
+export function useResume( key: ResumeTitle ): Resume<ResumeTitle> {
+
+    const resume = resumeList.find( ( resume ) => resume.title === key );
+
+    if ( !resume ) {
+        throw new Error( `Resume with title "${key}" not found.` );
+    }
+    return resume;
+}

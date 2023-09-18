@@ -1,0 +1,11 @@
+.header {
+    @apply 
+        w-full
+        flex
+        items-center
+        text-accent-content
+        font-extrabold
+        text-3xl
+        gap-2
+        mb-8;
+}

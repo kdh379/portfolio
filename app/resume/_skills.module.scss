@@ -1,0 +1,86 @@
+.skill-item {
+    @apply
+        gap-2
+        mb-4
+        bg-base-200
+        px-2
+        py-2
+        rounded-md;
+    
+    &:hover {
+        @apply
+            bg-base-300;
+    }
+    
+    > hgroup {
+        @apply
+            flex
+            gap-2
+            mb-2;
+
+        > svg {
+            @apply
+                w-16
+                h-16
+                min-w-max
+                text-accent-content;
+        }
+    
+        > header {
+            > h3 {
+                @apply
+                    flex
+                    items-center
+                    font-bold
+                    gap-2
+                    text-xl
+                    text-accent-content;
+            }
+    
+            > ol {
+                @apply
+                    flex
+                    flex-wrap
+                    gap-2
+                    text-sm;
+                
+                > li {
+                    @apply
+                        w-max
+                        bg-neutral
+                        text-neutral-content
+                        rounded-md
+                        px-2
+                        py-1
+                        transition-colors
+                        cursor-default;
+                    
+                    &:hover, &:focus {
+                        @apply
+                            bg-neutral-focus
+                            text-accent-content;
+                    }
+                }
+            }
+        }
+    }
+
+    > ol {
+        @apply
+            text-sm;
+        
+        > li {
+            @apply
+                px-2
+                pt-1
+                transition-colors
+                cursor-default;
+            
+            &:hover, &:focus {
+                @apply
+                    text-accent-content;
+            }
+        }
+    }
+
+}
