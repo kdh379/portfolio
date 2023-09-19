@@ -1,7 +1,7 @@
 import AboutMe from "./about-me";
-import Career from "./career";
+import Blog from "./blog";
 import Contact from "./contact";
-import Post from "./post";
+import Experience from "./experience";
 import Projects from "./projects";
 import Skills from "./skills";
 
@@ -9,9 +9,9 @@ export default function Resume() {
     return <main>
         <AboutMe />
         <Skills />
-        <Career />
+        <Experience />
         <Projects />
-        <Post />
+        <Blog />
         <Contact />
     </main>;
 }

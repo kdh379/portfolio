@@ -1,6 +1,6 @@
 import { FaUserCircle, FaCode, FaBriefcase, FaFolder, FaRegEdit, FaPhone } from "react-icons/fa";
 
-export declare type ResumeTitle = "About Me" | "Skills" | "Career" | "Projects" | "Post" | "Contact";
+export declare type ResumeTitle = "About Me" | "Skills" | "Experience" | "Projects" | "Blog" | "Contact";
 
 interface Resume<T_Title> {
     title: T_Title;
@@ -20,8 +20,8 @@ export const resumeList: Resume<ResumeTitle>[] = [
         icon: <FaCode />,
     },
     {
-        title: "Career",
-        href: "#career",
+        title: "Experience",
+        href: "#experience",
         icon: <FaBriefcase />,
     },
     {
@@ -30,8 +30,8 @@ export const resumeList: Resume<ResumeTitle>[] = [
         icon: <FaFolder />,
     },
     {
-        title: "Post",
-        href: "#post",
+        title: "Blog",
+        href: "#blog",
         icon: <FaRegEdit />,
     },
     {

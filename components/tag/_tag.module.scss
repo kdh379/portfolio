@@ -1,0 +1,17 @@
+.tag {
+    @apply
+        w-max
+        bg-neutral
+        text-neutral-content
+        rounded-md
+        px-2
+        py-1
+        transition-colors
+        cursor-default;
+    
+    &:hover, &:focus {
+        @apply
+            bg-neutral-focus
+            text-accent-content;
+    }
+}

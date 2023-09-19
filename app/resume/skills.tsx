@@ -4,6 +4,7 @@ import style from "./_skills.module.scss";
 
 import Header from "components/header";
 import Section from "components/section";
+import Tag from "components/tag";
 import data from "data/skills.json";
 import { useResume } from "hooks/resume-list";
 
@@ -35,7 +36,9 @@ function SkillItem( props: SkillItemProps ) {
             <header>
                 <h3>{title}</h3>
                 <ol>
-                    {keywords.map( ( keyword ) => <li key={keyword}>{keyword}</li> )}
+                    {keywords.map( ( keyword ) => <li key={keyword}>
+                        <Tag>{keyword}</Tag>
+                    </li> )}
                 </ol>
             </header>
         </hgroup>
@@ -54,7 +57,7 @@ export default function Skills() {
             icon={resume.icon}
             headerText={resume.title}
         />
-        <ul>
+        <ul className={style.skills}>
             {data.skills.map( ( skill ) => <SkillItem key={skill.id}
                 {...skill} /> )}
         </ul>

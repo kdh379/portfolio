@@ -3,3 +3,8 @@
         scroll-smooth
         text-[16px];
 }
+
+p {
+    @apply
+        whitespace-pre-wrap
+}
