@@ -51,14 +51,15 @@
 
     > ol {
         @apply
-            text-sm;
+            text-sm
+            pl-6;
         
         > li {
             @apply
-                px-2
                 pt-1
                 transition-colors
-                cursor-default;
+                cursor-default
+                list-disc;
             
             &:hover, &:focus {
                 @apply

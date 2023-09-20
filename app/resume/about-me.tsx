@@ -2,9 +2,13 @@ import style from "./_about-me.module.scss";
 
 import Section from "components/section";
 import data from "data/about-me.json";
+import { useResume } from "hooks/resume-list";
 
 export default function AboutMe() {
-    return <Section id="about"
+
+    const resume = useResume( "About Me" );
+
+    return <Section id={resume.href}
         className="h-screen">
         <div className={style["about-me"]}>
             <hgroup>

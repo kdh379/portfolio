@@ -13,7 +13,7 @@ export const Sidebar = memo( () => {
             {resumeList.map( ( { title, href, icon } ) => {
                 return <li key={href}
                     className={style["sidebar__nav-item"]}>
-                    <a href={href}>
+                    <a href={`#${href}`}>
                         {icon}
                         {title}
                     </a>

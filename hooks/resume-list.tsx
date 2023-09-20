@@ -11,32 +11,32 @@ interface Resume<T_Title> {
 export const resumeList: Resume<ResumeTitle>[] = [
     {
         title: "About Me",
-        href: "#about",
+        href: "about",
         icon: <FaUserCircle />,
     },
     {
         title: "Skills",
-        href: "#skills",
+        href: "skills",
         icon: <FaCode />,
     },
     {
         title: "Experience",
-        href: "#experience",
+        href: "experience",
         icon: <FaBriefcase />,
     },
     {
         title: "Projects",
-        href: "#projects",
+        href: "projects",
         icon: <FaFolder />,
     },
     {
         title: "Blog",
-        href: "#blog",
+        href: "blog",
         icon: <FaRegEdit />,
     },
     {
         title: "Contact",
-        href: "#contact",
+        href: "contact",
         icon: <FaPhone />,
     },
 ];

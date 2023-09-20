@@ -1,0 +1,13 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "name": "로아보드",
+            "description": "온라인 게임 로스트아크의 캐릭터 정보를 검색할 수 있는 웹사이트",
+            "period": "2023. 03 ~ 2023. 06",
+            "image": [],
+            "link": "https://lostark-board.vercel.app/",
+            "github": "https://github.com/kdh379/LostArkBoard"
+        }
+    ]
+}

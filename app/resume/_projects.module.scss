@@ -1,0 +1,19 @@
+.link {
+    > li {
+        @apply 
+            flex
+            items-center
+            gap-2;
+
+        > a {
+            @apply 
+                underline;
+    
+            }
+        &:hover, &:focus {
+            @apply 
+                text-accent-focus;
+        }
+    }
+
+}
