@@ -1,5 +1,8 @@
 .app {
     @apply transition-[margin-left]
-        desktop:ml-sidebar
-        duration-500;
+        duration-500
+        relative
+        mx-auto
+        max-w-desktop
+        min-h-screen;
 }

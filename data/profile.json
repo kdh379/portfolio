@@ -1,0 +1,13 @@
+{
+    "name": "김도현",
+    "engName": "Kim Do Hyeon",
+    "job": "Web Developer",
+    "email": "ehgus37625@nager.com",
+    "phone": "010-8932-2078",
+    "address": "경기도 성남시 수정구",
+    "links": {
+        "github": "https://github.com/kdh379",
+        "blog": "https://gomban.tistory.com/",
+        "code": "https://github.com/kdh379/portfolio"
+    }
+}

@@ -1,0 +1,50 @@
+.carousel {
+    @apply
+        relative
+        overflow-hidden;
+
+    &__wrapper {
+        @apply
+            h-full
+            flex
+            flex-nowrap
+            snap-mandatory
+            scroll-smooth
+            transition-transform
+            duration-300;
+    
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__item {
+        @apply
+            w-full
+            h-full
+            relative
+            box-content
+            snap-start
+            flex-none
+            flex
+            items-center;
+    }
+
+    &__button {
+        @apply
+            absolute
+            top-1/2
+            transform
+            -translate-y-1/2
+            opacity-50
+            z-10
+            transition-opacity;
+        
+        &:hover, &:focus {
+            @apply opacity-100;
+        }
+    }
+}

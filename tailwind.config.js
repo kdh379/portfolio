@@ -7,7 +7,7 @@ const screenValue = {
 };
 
 const customSize = {
-    sidebar: "200px",
+    sidebar: "250px",
 };
 
 const screens = Object.fromEntries( Object.entries( screenValue ).map( ( [key, value] ) => [key, `${value[0]}px`] ) );
@@ -35,6 +35,9 @@ const tailwindConfig = {
             height: {},
             spacing: {
                 ...customSize,
+            },
+            borderColor: {
+                DEFAULT: "hsl(var(--bc)/20%)",
             },
         },
     },

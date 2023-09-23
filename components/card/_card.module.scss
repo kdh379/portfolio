@@ -1,0 +1,19 @@
+.card {
+    @apply
+        bg-base-200
+        rounded-md
+        p-6
+        flex
+        flex-col
+        gap-4
+        border
+        border-neutral
+        transition-shadow
+        duration-300
+        cursor-pointer;
+
+    &:hover, &:focus {
+        @apply shadow-xl
+            bg-base-300;
+    }
+}

@@ -1,0 +1,17 @@
+.button {
+    @apply
+        bg-base-200
+        rounded-md
+        transition-colors
+        cursor-pointer;
+
+    &:hover, &:focus {
+        @apply bg-base-300;
+    }
+
+    // disabled 상태일 때
+    &:disabled {
+        @apply opacity-50
+            pointer-events-none;
+    }
+}

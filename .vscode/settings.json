@@ -8,7 +8,9 @@
         "headlessui",
         "clsx",
         "immer",
-        "daisyui"
+        "daisyui",
+        "innomanager",
+        "inno"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",
@@ -16,6 +18,6 @@
         "vscode-extension",
         ".git/objects",
         ".vscode",
-        ".vscode-insiders"
+        ".vscode-insiders",
     ]
 }

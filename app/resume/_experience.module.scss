@@ -41,3 +41,123 @@
             font-bold;
     }
 }
+
+.project {
+    @apply
+        relative
+        mt-4
+        bg-base-200
+        rounded-md
+        p-4;
+    
+    &:hover, &:focus {
+        @apply bg-base-300;
+    }
+
+    &-info__wrapper {
+        @apply
+            flex
+            flex-wrap-reverse
+            gap-4
+            tablet:grid
+            tablet:grid-cols-2
+            tablet:gap-8;
+
+        
+    }
+
+    &-info__detail {
+        @apply flex-1;
+
+        > hgroup {
+            > header {
+                @apply 
+                    text-accent-content
+                    text-2xl
+                    font-bold;
+            }
+    
+            > p {
+                @apply mt-2
+                    font-medium
+                    tracking-wide;
+            }
+        }
+        > ul {
+            @apply mt-4;
+    
+            > li {
+                @apply
+                    mt-4;
+    
+                > h4 {
+                    @apply 
+                        text-accent-content
+                        font-bold;
+                }
+    
+                > p {
+                    @apply mt-2;
+    
+                    &:hover, &:focus {
+                        @apply text-accent-content;
+                    }
+                }
+    
+                > ul {
+                    @apply mt-2;
+    
+                    > li {
+                        &:hover, &:focus {
+                            @apply text-accent-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    &-info__carousel {
+        @apply
+            flex-1
+            box-border
+            mb-4
+            min-w-[16rem]
+            tablet:right-4;
+    }
+
+    > ul {
+        @apply mt-4;
+
+        > li {
+            @apply
+                mt-4;
+
+            > h4 {
+                @apply 
+                    text-accent-content
+                    font-bold;
+            }
+
+            > p {
+                @apply mt-2;
+
+                &:hover, &:focus {
+                    @apply text-accent-content;
+                }
+            }
+
+            > ul {
+                @apply mt-2;
+
+                > li {
+                    &:hover, &:focus {
+                        @apply text-accent-content;
+                    }
+                }
+            }
+        }
+    }
+}

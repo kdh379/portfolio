@@ -1,7 +1,13 @@
 :root {
     @apply 
         scroll-smooth
+        transition-colors
         text-[16px];
+}
+
+body {
+    @apply
+        antialiased;
 }
 
 p {

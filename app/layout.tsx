@@ -19,7 +19,7 @@ export default function RootLayout( {
 } ) {
     return (
         <html lang="ko"
-            data-theme="dark">
+            data-theme="light">
             <body className={inter.className}>
                 <App>
                     {children}
