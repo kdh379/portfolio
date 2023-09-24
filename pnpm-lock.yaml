@@ -6,7 +6,7 @@ specifiers:
   '@tanstack/react-query-devtools': ^4.35.3
   '@tanstack/react-query-next-experimental': 5.0.0-alpha.80
   '@types/node': 18.16.16
-  '@types/react': ^18.2.0
+  '@types/react': ^18.2.22
   '@typescript-eslint/eslint-plugin': ^6.7.0
   '@typescript-eslint/parser': ^6.7.0
   autoprefixer: ^10.4.14
@@ -49,7 +49,7 @@ dependencies:
 devDependencies:
   '@next/eslint-plugin-next': 13.4.19
   '@types/node': 18.16.16
-  '@types/react': 18.2.21
+  '@types/react': 18.2.22
   '@typescript-eslint/eslint-plugin': 6.7.0_xabvc3ucbef4guhshycsj6ib4e
   '@typescript-eslint/parser': 6.7.0_x243x5ndcjz7oaxh6fnphb2y6q
   autoprefixer: 10.4.15_postcss@8.4.29
@@ -365,8 +365,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react/18.2.21:
-    resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
+  /@types/react/18.2.22:
+    resolution: {integrity: sha512-60fLTOLqzarLED2O3UQImc/lsNRgG0jE/a1mPW9KjMemY0LMITWEsbS4VvZ4p6rorEHd5YKxxmMKSDK505GHpA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
