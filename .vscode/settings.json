@@ -13,7 +13,8 @@
         "inno",
         "tistory",
         "trackbacks",
-        "tanstack"
+        "tanstack",
+        "gomban"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",

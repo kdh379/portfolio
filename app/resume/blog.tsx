@@ -1,12 +1,11 @@
-"use client";
-
 import { Hydrate, dehydrate } from "@tanstack/react-query";
+
+import BlogPost from "./blog-post";
 
 import getQueryClient from "app/query-client";
 import AsyncBoundary from "components/boundary/async-boundary";
 import Header from "components/header";
 import Section from "components/section";
-import usePostList from "hooks/post-list";
 import { useResume } from "hooks/resume-list";
 import { api } from "utils/api";
 import { getTistoryAccessToken } from "utils/tistory-token";
@@ -38,34 +37,22 @@ function ErrorFallback( ) {
 }
 
 async function HydratedBlog() {
+
+    const params = POST_LIST_PARAMS;
+
     const queryClient = getQueryClient();
     await queryClient.fetchQuery( {
         queryKey: ["tistory.getPost"],
         queryFn: () => api( {
             key: "tistory.getPost",
-            params: {
-                blogName: "gomban",
-                access_token: getTistoryAccessToken(),
-            },
+            params,
         } ),
     } );
     const dehydratedState = dehydrate( queryClient );
 
     return (
         <Hydrate state={dehydratedState}>
-            <BlogPost />
+            <BlogPost {...params} />
         </Hydrate>
     );
-}
-
-function BlogPost( ) {
-
-    const { data } = usePostList( {
-        blogName: "gomban",
-        access_token: getTistoryAccessToken(),
-    } );
-
-    return <>
-        {data?.tistory.status}
-    </>;
 }
