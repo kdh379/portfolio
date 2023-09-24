@@ -6,7 +6,7 @@ import { useQueryErrorResetBoundary } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
 
-import { hasTistoryError } from "api/request";
+import { hasTistoryError } from "utils/api";
 
 interface AsyncBoundaryProps {
     children: ReactElement;

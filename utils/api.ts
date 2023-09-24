@@ -17,10 +17,12 @@ interface RequestOptions <T_Key extends keyof APIInterface> {
     params?: APIInterface[T_Key]["params"];
 }
 
+// ! Request & Response
 interface APIInterface {
     "tistory.getPost": HttpReqRes<TistoryGetPostReqParam, TistoryCommonRes<TistoryGetPostRes>>;
 }
 
+// ! API Request Dict
 const URLDict: Record<keyof APIInterface, HttpRequestInfo> = {
     "tistory.getPost": {
         url: "/post/list?output=json&access_token=:access_token&blogName=:blogName",
@@ -28,6 +30,7 @@ const URLDict: Record<keyof APIInterface, HttpRequestInfo> = {
     },
 };
 
+// ! API Service URL Map
 const SERVICE_URL_MAP: {[key: string]: string} = {
     "tistory": "https://www.tistory.com/apis",
 };
@@ -54,7 +57,7 @@ const getAPIInfo = <T extends keyof APIInterface>( key: T, params?: APIInterface
     return { url, method };
 };
 
-export async function request<T_Key extends keyof APIInterface>( {
+export async function api<T_Key extends keyof APIInterface>( {
     key,
     params,
 }: RequestOptions<T_Key> )

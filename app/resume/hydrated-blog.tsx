@@ -2,9 +2,9 @@ import { Hydrate, dehydrate } from "@tanstack/react-query";
 
 import Blog from "./blog";
 
-import { request } from "api/request";
 import getQueryClient from "app/query-client";
 import AsyncBoundary from "components/boundary/async-boundary";
+import { api } from "utils/api";
 import { getTistoryAccessToken } from "utils/tistory-token";
 
 export default function HydratedBlog() {
@@ -24,7 +24,7 @@ async function HydratedBlogQuery() {
     const queryClient = getQueryClient();
     await queryClient.fetchQuery( {
         queryKey: ["tistory.getPost"],
-        queryFn: () => request( {
+        queryFn: () => api( {
             key: "tistory.getPost",
             params: {
                 blogName: "gomban",
