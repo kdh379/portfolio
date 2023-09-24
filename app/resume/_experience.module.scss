@@ -93,7 +93,8 @@
                 > h4 {
                     @apply 
                         text-accent-content
-                        font-bold;
+                        font-bold
+                        mb-2;
                 }
     
                 > p {
@@ -123,17 +124,13 @@
         @apply
             flex-1
             box-border
-            mb-4
             min-w-[16rem]
             tablet:right-4;
     }
 
     > ul {
-        @apply mt-4;
-
         > li {
-            @apply
-                mt-4;
+            @apply mt-4;
 
             > h4 {
                 @apply 

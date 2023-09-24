@@ -10,7 +10,10 @@
         "immer",
         "daisyui",
         "innomanager",
-        "inno"
+        "inno",
+        "tistory",
+        "trackbacks",
+        "tanstack"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",

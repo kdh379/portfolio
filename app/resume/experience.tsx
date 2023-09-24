@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import style from "./_experience.module.scss";
 
 import Carousel from "components/carousel/carousel";
@@ -34,11 +36,10 @@ function ProjectItem( props: ProjectItemProps ) {
                 <ul>
                     <li>
                         <h4>역할</h4>
-                        <ul className="flex gap-2">
-                            {roleList.map( ( role ) => <li key={role}>
-                                <Tag>{role}</Tag>
-                            </li> )}
-                        </ul>
+                        <div className="flex gap-2 flex-wrap">
+                            {roleList.map( ( role ) =>
+                                <Tag key={role}>{role}</Tag> )}
+                        </div>
                     </li>
                     <li>
                         <h4>주요 업무</h4>
@@ -54,11 +55,12 @@ function ProjectItem( props: ProjectItemProps ) {
             { images.length > 0 &&
                 <Carousel.Wrapper className={style["project-info__carousel"]}>
                     {images.map( ( src ) => <Carousel.Item key={src}>
-                        <img
-                            key={src}
+                        <Image src={src}
                             alt="InnoManager"
-                            src={src}
-                        />
+                            width={500}
+                            height={250}
+                            priority
+                            className="rounded-md h-auto" />
                     </Carousel.Item> )}
                 </Carousel.Wrapper>
             }

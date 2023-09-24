@@ -1,8 +1,8 @@
 import style from "./_page.module.scss";
 import AboutMe from "./about-me";
-import Blog from "./blog";
 import Contact from "./contact";
 import Experience from "./experience";
+import HydratedBlog from "./hydrated-blog";
 import Skills from "./skills";
 
 export default function Resume() {
@@ -10,7 +10,7 @@ export default function Resume() {
         <AboutMe />
         <Skills />
         <Experience />
-        <Blog />
+        <HydratedBlog />
         <Contact />
     </main>;
 }

@@ -3,6 +3,7 @@
 import { memo, useState } from "react";
 
 import { clsx } from "clsx";
+import Image from "next/image";
 import { BiCode, BiLogoGithub, BiMoon, BiSun } from "react-icons/bi";
 import { SiTistory } from "react-icons/si";
 
@@ -40,8 +41,10 @@ export const Sidebar = memo( () => {
     return <nav className={style.sidebar}>
         <div className={style.sidebar__wrapper}>
             <div className={style.sidebar__profile}>
-                <img src="/images/profile.jpg"
-                    alt="Profile" />
+                <Image src="/images/profile.jpg"
+                    alt="Profile"
+                    width={300}
+                    height={300} />
             </div>
             <hgroup>
                 <header>{data.name}</header>

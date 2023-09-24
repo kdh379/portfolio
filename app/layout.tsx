@@ -1,5 +1,9 @@
+import { PropsWithChildren } from "react";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import Providers from "./provider";
 
 import App from "components/app";
 
@@ -12,18 +16,23 @@ export const metadata: Metadata = {
     description: "KDH Portfolio",
 };
 
-export default function RootLayout( {
-    children,
-}: {
-    children: React.ReactNode;
-} ) {
+export default function RootLayout( props: PropsWithChildren ) {
+    const {
+        children,
+    } = props;
+
     return (
         <html lang="ko"
             data-theme="light">
+            <link rel="shortcut icon"
+                href="/svg/favicon.svg"
+                type="image/x-icon" />
             <body className={inter.className}>
-                <App>
-                    {children}
-                </App>
+                <Providers>
+                    <App>
+                        {children}
+                    </App>
+                </Providers>
             </body>
         </html>
     );

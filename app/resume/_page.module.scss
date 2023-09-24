@@ -1,4 +1,6 @@
 .main {
     @apply
-        desktop:pl-sidebar;
+        desktop:pl-sidebar
+        transition-[padding-left]
+        duration-500;
 }

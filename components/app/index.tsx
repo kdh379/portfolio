@@ -10,5 +10,6 @@ export default function App( props: PropsWithChildren ) {
             <Sidebar />
             {props.children}
         </div>
+
     );
 }
