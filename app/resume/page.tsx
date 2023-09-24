@@ -10,6 +10,8 @@ export default function Resume() {
         <AboutMe />
         <Skills />
         <Experience />
+        {/* TODO : Next 고유 버그. 수정되면 주석 제거 */}
+        {/* @ts-expect-error Async Server Component */}
         <HydratedBlog />
         <Contact />
     </main>;
