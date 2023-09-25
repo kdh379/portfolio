@@ -1,6 +1,8 @@
 .main {
     @apply
-        desktop:pl-sidebar
+        mt-appHeader
+        duration-500
         transition-[padding-left]
-        duration-500;
+        desktop:pl-sidebar
+        desktop:mt-0;
 }

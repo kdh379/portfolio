@@ -8,6 +8,7 @@ const screenValue = {
 
 const customSize = {
     sidebar: "250px",
+    appHeader: "44px",
 };
 
 const screens = Object.fromEntries( Object.entries( screenValue ).map( ( [key, value] ) => [key, `${value[0]}px`] ) );
