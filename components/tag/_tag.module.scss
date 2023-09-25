@@ -3,15 +3,17 @@
         w-max
         bg-neutral
         text-neutral-content
-        rounded-md
+        rounded-xl
         px-2
         py-1
         transition-colors
+        text-sm
+        font-bold
         cursor-default;
     
     &:hover, &:focus {
         @apply
             bg-neutral-focus
-            text-accent-focus;
+            text-white;
     }
 }

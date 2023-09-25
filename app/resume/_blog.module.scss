@@ -1,0 +1,69 @@
+.blog__header {
+    @apply
+        flex
+        justify-between
+        items-center;
+
+    > h2 {
+        @apply
+            text-2xl
+            font-bold
+            text-accent-content;
+    }
+
+    > a {
+        @apply
+            text-sm
+            font-bold;
+    }
+}
+
+.blog__post {
+    @apply
+        grid
+        grid-cols-2
+        gap-4
+        mt-4
+        tablet:grid-cols-4;
+
+    > li {
+        @apply
+            min-h-[12rem]
+            p-4
+            bg-base-200
+            rounded-xl
+            transition
+            cursor-pointer;
+
+        &:hover, &:focus {
+            @apply
+                bg-base-300
+                text-accent-content
+                -translate-y-3
+                shadow-xl;
+        }
+
+        > a {
+            @apply 
+                flex
+                flex-col
+                items-start
+                h-full;
+
+            > h3 {
+                @apply
+                    mt-2
+                    text-lg
+                    font-bold
+                    text-accent-content;
+            }
+    
+            > p {
+                @apply
+                    mt-auto
+                    text-sm;
+            }
+        }
+
+    }
+}

@@ -12,8 +12,8 @@ export default function AboutMe() {
         className="h-screen">
         <div className={style["about-me"]}>
             <hgroup>
-                <h3>안녕하세요,</h3>
-                <h3>김도현입니다!</h3>
+                <h1>안녕하세요,</h1>
+                <h1>김도현입니다!</h1>
             </hgroup>
             <p>{data.greeting}</p>
         </div>

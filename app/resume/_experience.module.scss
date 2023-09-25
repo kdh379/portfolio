@@ -4,7 +4,7 @@
     > hgroup {
         @apply mt-4;
 
-        > header {
+        > h2 {
             @apply text-accent-content
                 text-2xl
                 font-bold;
@@ -70,7 +70,7 @@
         @apply flex-1;
 
         > hgroup {
-            > header {
+            > h2 {
                 @apply 
                     text-accent-content
                     text-2xl
@@ -90,7 +90,7 @@
                 @apply
                     mt-4;
     
-                > h4 {
+                > h3 {
                     @apply 
                         text-accent-content
                         font-bold
@@ -132,7 +132,7 @@
         > li {
             @apply mt-4;
 
-            > h4 {
+            > h3 {
                 @apply 
                     text-accent-content
                     font-bold;

@@ -1,14 +1,14 @@
 import { FaUserCircle, FaCode, FaBriefcase, FaRegEdit, FaPhone } from "react-icons/fa";
 
-export declare type ResumeTitle = "About Me" | "Skills" | "Experience" | "Projects" | "Blog" | "Contact Us";
+export declare type ResumeTitle = "About Me" | "Skills" | "Experience" | "Projects" | "Blog" | "Contact";
 
-interface Resume<T_Title> {
-    title: T_Title;
+export interface Resume {
+    title: ResumeTitle;
     href: string;
     icon: JSX.Element;
 }
 
-export const resumeList: Resume<ResumeTitle>[] = [
+export const resumeList: Resume[] = [
     {
         title: "About Me",
         href: "about",
@@ -30,7 +30,7 @@ export const resumeList: Resume<ResumeTitle>[] = [
         icon: <FaRegEdit />,
     },
     {
-        title: "Contact Us",
+        title: "Contact",
         href: "contact",
         icon: <FaPhone />,
     },
@@ -40,7 +40,7 @@ export function useResumeList( ) {
     return resumeList;
 }
 
-export function useResume( key: ResumeTitle ): Resume<ResumeTitle> {
+export function useResume( key: ResumeTitle ): Resume {
 
     const resume = resumeList.find( ( resume ) => resume.title === key );
 

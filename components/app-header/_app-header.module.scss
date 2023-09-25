@@ -1,0 +1,28 @@
+.app-header {
+    @apply
+        w-full
+        px-4
+        py-2
+        box-border
+        fixed
+        flex
+        items-center
+        top-0
+        bg-base-200
+        desktop:-top-1/2;
+
+    > h1 {
+        @apply
+            text-lg
+            font-bold
+            text-accent-content;
+    }
+
+    > button {
+        @apply
+            ml-auto
+            text-2xl
+            text-accent-content
+            cursor-pointer;
+    }
+}

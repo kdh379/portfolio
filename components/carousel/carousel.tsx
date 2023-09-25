@@ -39,7 +39,8 @@ function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
 
     return <div className={clsx( style.carousel, className )}>
         { !isStartPoint && <Button className={clsx( style["carousel__button"], "left-3" )}
-            onClick={handlePrevClick}>
+            onClick={handlePrevClick}
+            aria-label="Carousel Prev">
             <BiChevronLeft size={32} />
         </Button>}
         <div
@@ -49,7 +50,8 @@ function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
             {children}
         </div>
         { !isEndPoint && <Button className={clsx( style["carousel__button"], "right-3" )}
-            onClick={handleNextClick}>
+            onClick={handleNextClick}
+            aria-label="Carousel Next">
             <BiChevronRight size={32} />
         </Button>}
     </div>;

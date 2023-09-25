@@ -20,12 +20,17 @@ interface RequestOptions <T_Key extends keyof APIInterface> {
 // ! Request & Response
 interface APIInterface {
     "tistory.getPost": HttpReqRes<TistoryGetPostReqParam, TistoryCommonRes<TistoryGetPostRes>>;
+    "tistory.getCategory": HttpReqRes<TistoryGetCategoryReqParam, TistoryCommonRes<TistoryGetCategoryRes>>;
 }
 
 // ! API Request Dict
 const URLDict: Record<keyof APIInterface, HttpRequestInfo> = {
     "tistory.getPost": {
-        url: "/post/list?output=json&access_token=:access_token&blogName=:blogName",
+        url: "/post/list",
+        method: "GET",
+    },
+    "tistory.getCategory": {
+        url: "/category/list",
         method: "GET",
     },
 };
@@ -46,15 +51,16 @@ const getInstance = ( serviceName: keyof APIInterface ) =>
     return instance;
 };
 
-const getAPIInfo = <T extends keyof APIInterface>( key: T, params?: APIInterface[T]["params"] ) =>
+export const getAPIInfo = <T extends keyof APIInterface>( key: T, params?: APIInterface[T]["params"] ) =>
 {
     const { method } = URLDict[key];
-    const url =  Object.entries( params ?? {} ).reduce( ( acc, [key, value] ) =>
-    {
-        return acc.replace( `:${key}`, value );
-    }, URLDict[key].url );
+    const url = `${URLDict[key].url}${
+        params
+            ? "?" + Object.entries( params ).map( ( [ key, value ] ) => `${key}=${value}` ).join( "&" )
+            : ""
+    }`;
 
-    return { url, method };
+    return { key, url, method };
 };
 
 export async function api<T_Key extends keyof APIInterface>( {

@@ -2,9 +2,9 @@ import { BiDotsHorizontalRounded, BiLogoCss3, BiLogoHtml5, BiLogoJavascript, BiL
 
 import style from "./_skills.module.scss";
 
-import Header from "components/header";
 import Section from "components/section";
 import Tag from "components/tag";
+import Title from "components/title";
 import data from "data/skills.json";
 import { useResume } from "hooks/resume-list";
 
@@ -33,14 +33,14 @@ function SkillItem( props: SkillItemProps ) {
     return <li className={style["skill-item"]}>
         <hgroup>
             {ICON_MAP[id]}
-            <header>
-                <h3>{title}</h3>
+            <div>
+                <h2>{title}</h2>
                 <ol>
                     {keywords.map( ( keyword ) => <li key={keyword}>
                         <Tag>{keyword}</Tag>
                     </li> )}
                 </ol>
-            </header>
+            </div>
         </hgroup>
         <ol>
             {details?.map( ( detail ) => <li key={detail}>{detail}</li> )}
@@ -53,7 +53,7 @@ export default function Skills() {
     const resume = useResume( "Skills" );
 
     return <Section id="skills" >
-        <Header
+        <Title
             icon={resume.icon}
             headerText={resume.title}
         />

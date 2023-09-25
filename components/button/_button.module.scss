@@ -1,12 +1,12 @@
 .button {
     @apply
-        bg-base-200
         rounded-md
         transition-colors
         cursor-pointer;
 
     &:hover, &:focus {
-        @apply bg-base-300;
+        @apply bg-base-300
+            text-accent-content;
     }
 
     // disabled 상태일 때

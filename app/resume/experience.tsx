@@ -5,9 +5,9 @@ import Image from "next/image";
 import style from "./_experience.module.scss";
 
 import Carousel from "components/carousel/carousel";
-import Header from "components/header";
 import Section from "components/section";
 import Tag from "components/tag";
+import Title from "components/title";
 import data from "data/experience.json";
 import { useResume } from "hooks/resume-list";
 
@@ -30,19 +30,19 @@ function ProjectItem( props: ProjectItemProps ) {
         <div className={style["project-info__wrapper"]}>
             <div className={style["project-info__detail"]}>
                 <hgroup>
-                    <header>{name}</header>
+                    <h2>{name}</h2>
                     <p>{subtitle}</p>
                 </hgroup>
                 <ul>
                     <li>
-                        <h4>역할</h4>
+                        <h3>역할</h3>
                         <div className="flex gap-2 flex-wrap">
                             {roleList.map( ( role ) =>
                                 <Tag key={role}>{role}</Tag> )}
                         </div>
                     </li>
                     <li>
-                        <h4>주요 업무</h4>
+                        <h3>주요 업무</h3>
                         <ul>
                             {majors.map( ( major ) => <li key={major}
                                 className="list-disc ml-4">
@@ -68,7 +68,7 @@ function ProjectItem( props: ProjectItemProps ) {
         <ul>
             <li>
                 { feature.length > 0 && <>
-                    <h4>강점</h4>
+                    <h3>강점</h3>
                     <ul>
                         {feature.map( ( feature ) => <li key={feature}
                             className="list-disc ml-4">
@@ -78,7 +78,7 @@ function ProjectItem( props: ProjectItemProps ) {
                 </> }
             </li>
             <li>
-                <h4>내용</h4>
+                <h3>내용</h3>
                 <p>{detail}</p>
             </li>
         </ul>
@@ -98,7 +98,7 @@ function ExperienceItem( props: ExperienceItemProps ) {
     return <article className={style["experience-item"]}>
         <Tag>{period}</Tag>
         <hgroup>
-            <header>{company}</header>
+            <h2>{company}</h2>
             <span>{belong}</span>
             <ol>
                 {task.map( ( task ) => <li key={task}>{task}</li> )}
@@ -118,7 +118,7 @@ export default function Experience() {
     const resume = useResume( "Experience" );
 
     return <Section id={resume.href}>
-        <Header
+        <Title
             headerText={resume.title}
             icon={resume.icon}
         />

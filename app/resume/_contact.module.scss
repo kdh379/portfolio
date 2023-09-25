@@ -1,0 +1,43 @@
+.contact {
+    @apply
+        grid
+        grid-cols-1
+        gap-4
+        my-8
+        mobile:grid-cols-3;
+
+    > li {
+        @apply
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-y-3
+            pt-5
+            pb-4
+            bg-base-200
+            transition-colors
+            rounded-xl;
+
+        &:hover, &:focus {
+            @apply
+                bg-base-300
+                text-accent-content
+                shadow-xl;
+        }
+
+        > svg {
+            @apply
+                w-8
+                h-8
+                text-accent-content;
+        }
+
+        > h2 {
+            @apply
+                text-lg
+                font-bold
+                text-accent-content;
+        }
+    }
+}

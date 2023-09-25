@@ -1,10 +1,12 @@
 .sidebar {
     @apply h-full
+        bg-base-100
         w-sidebar
         border-r
         absolute
         top-0
         px-4
+        z-10
         transition-[left]
         duration-500
         -left-sidebar
@@ -33,6 +35,17 @@
                     opacity-50;
             }
         }
+    }
+
+    &__overlay {
+        @apply
+            fixed
+            inset-0
+            backdrop-blur-md
+            bg-base-300/10
+            z-10
+            transition-all
+            desktop:hidden;
     }
 
     &__action {
@@ -126,7 +139,7 @@
             @apply w-full
                 h-0
                 absolute
-                bg-secondary-focus
+                bg-blue-500/50
                 bottom-0
                 rounded-sm
                 left-0
@@ -142,5 +155,17 @@
             content: "";
         }
         
+    }
+}
+
+html[data-sidebar="true"] {
+    .sidebar {
+        @apply left-0;
+    }
+}
+
+html[data-sidebar="false"] {
+    .sidebar__overlay {
+        @apply hidden;
     }
 }

@@ -1,17 +1,17 @@
-"use client";
-
 import { useQuery } from "@tanstack/react-query";
 
-import { api } from "utils/api";
+import { api, getAPIInfo } from "utils/api";
+
+export const getPostList = ( props: TistoryGetPostReqParam ) => api( {
+    key: getAPIInfo( "tistory.getPost" ).key,
+    params: props,
+} );
 
 export default function usePostList( props: TistoryGetPostReqParam ) {
+    const { key } = getAPIInfo( "tistory.getPost" );
+
     return useQuery( {
-        queryKey: ["tistory.getPost", props],
-        queryFn: () => api( {
-            key: "tistory.getPost",
-            params: props,
-        } ),
-        suspense: true,
-        refetchOnWindowFocus: false,
+        queryKey: [key, props],
+        queryFn: () => getPostList( props ),
     } );
 }

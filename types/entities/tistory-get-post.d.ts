@@ -1,6 +1,4 @@
-interface TistoryGetPostReqParam {
-    access_token: string;
-    blogName: string;
+interface TistoryGetPostReqParam extends TistoryCommonReqParam {
     page?: string;
 };
 
