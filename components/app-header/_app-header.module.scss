@@ -6,11 +6,10 @@
         box-border
         fixed
         flex
-        -top-appHeader
         items-center
         bg-base-200
         transition-[top]
-        desktop:hidden;
+        desktop:-top-1/2;
 
     > h1 {
         @apply
