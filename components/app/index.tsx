@@ -7,11 +7,12 @@ import { Sidebar } from "components/sidebar";
 
 export default function App( props: PropsWithChildren ) {
     return (
-        <div className={style.app}>
-            <AppHeader />
-            <Sidebar />
-            {props.children}
-        </div>
-
+        <>
+            <div className={style.app}>
+                <AppHeader />
+                <Sidebar />
+                {props.children}
+            </div>
+        </>
     );
 }

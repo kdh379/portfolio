@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useRef, useState } from "react";
+import React, { HTMLAttributes, PropsWithChildren, useRef, useState } from "react";
 
 import { clsx } from "clsx";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -7,12 +7,15 @@ import style from "./_carousel.module.scss";
 
 import Button from "components/button";
 
-interface CarouselWrapperProps {
-    className?: string;
+interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
 }
 
-function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
-    const { children, className } = props;
+function Wrapper( props: PropsWithChildren<CarouselProps> ) {
+    const {
+        children,
+        className,
+        ...restProps
+    } = props;
     const wrapperRef = useRef<HTMLDivElement>( null );
     const [current, setCurrent] = useState( 0 );
     const [isEndPoint, setIsEndPoint] = useState( false );
@@ -37,8 +40,9 @@ function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
         }
     };
 
-    return <div className={clsx( style.carousel, className )}>
-        { !isStartPoint && <Button className={clsx( style["carousel__button"], "left-3" )}
+    return <div className={clsx( style.carousel, className )}
+        {...restProps}>
+        { <Button className={clsx( style["carousel__button"], "left-3", isStartPoint && "hidden" )}
             onClick={handlePrevClick}
             aria-label="Carousel Prev">
             <BiChevronLeft size={32} />
@@ -49,7 +53,7 @@ function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
             style={{ transform: `translateX(-${current * 100}%)` }}>
             {children}
         </div>
-        { !isEndPoint && <Button className={clsx( style["carousel__button"], "right-3" )}
+        { <Button className={clsx( style["carousel__button"], "right-3", isEndPoint && "hidden" )}
             onClick={handleNextClick}
             aria-label="Carousel Next">
             <BiChevronRight size={32} />
@@ -57,10 +61,17 @@ function Wrapper( props: PropsWithChildren<CarouselWrapperProps> ) {
     </div>;
 }
 
-function Item( props: PropsWithChildren ) {
-    const { children } = props;
+function Item( props: PropsWithChildren<CarouselProps> ) {
+    const {
+        children,
+        className,
+        ...restProps
+    } = props;
 
-    return <div className={style.carousel__item}>
+    return <div
+        className={clsx( style.carousel__item, className )}
+        {...restProps}
+    >
         {children}
     </div>;
 }

@@ -61,7 +61,7 @@ export const Sidebar = memo( () => {
     return <>
         <div
             tabIndex={-1}
-            className={style["sidebar__overlay"]}
+            className={style["sidebar__backdrop"]}
             onClick={handleSidebarClose}
             onKeyDown={handleSidebarClose}
             role="button"

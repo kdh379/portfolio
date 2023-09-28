@@ -4,7 +4,7 @@
         grid-cols-1
         gap-4
         my-8
-        mobile:grid-cols-3;
+        tablet:grid-cols-2;
 
     > li {
         @apply
@@ -15,8 +15,10 @@
             gap-y-3
             pt-5
             pb-4
+            px-2
             bg-base-200
             transition-colors
+            overflow-hidden
             rounded-xl;
 
         &:hover, &:focus {

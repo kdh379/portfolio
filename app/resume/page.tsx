@@ -6,6 +6,7 @@ import Experience from "./experience";
 import Skills from "./skills";
 
 export default function Resume() {
+
     return <main className={style.main}>
         <AboutMe />
         <Skills />

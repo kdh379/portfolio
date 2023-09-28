@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
+
 import Image from "next/image";
+import { MdZoomOutMap } from "react-icons/md";
 
 import style from "./_experience.module.scss";
 
 import Carousel from "components/carousel/carousel";
+import Dialog from "components/dialog";
 import Section from "components/section";
 import Tag from "components/tag";
 import Title from "components/title";
@@ -26,9 +30,11 @@ function ProjectItem( props: ProjectItemProps ) {
         feature,
     } = props;
 
+    const [isShowImage, setIsShowImage] = useState( false );
+
     return <li className={style["project"]}>
-        <div className={style["project-info__wrapper"]}>
-            <div className={style["project-info__detail"]}>
+        <div className={style["project__wrapper"]}>
+            <div className={style["project__detail"]}>
                 <hgroup>
                     <h2>{name}</h2>
                     <p>{subtitle}</p>
@@ -52,17 +58,34 @@ function ProjectItem( props: ProjectItemProps ) {
                     </li>
                 </ul>
             </div>
-            { images.length > 0 &&
-                <Carousel.Wrapper className={style["project-info__carousel"]}>
-                    {images.map( ( src ) => <Carousel.Item key={src}>
-                        <Image src={src}
-                            alt="InnoManager"
-                            width={500}
-                            height={250}
-                            priority
-                            className="rounded-md h-auto" />
-                    </Carousel.Item> )}
-                </Carousel.Wrapper>
+            { images.length > 0 && <>
+                <div className={style["project__image"]}
+                    tabIndex={0}
+                    onClick={() => setIsShowImage( true )}
+                    onKeyDown={() => setIsShowImage( true )}
+                    role="button">
+                    <MdZoomOutMap className="absolute text-neutral z-10" />
+                    <Image src={images[0]}
+                        alt="InnoManager"
+                        fill
+                        sizes="75%"
+                        className="rounded-md" />
+                </div>
+                <Dialog
+                    isOpen={isShowImage}
+                    className={style["project__image-dialog"]}
+                    onClose={() => setIsShowImage( false )}
+                >
+                    <Carousel.Wrapper>
+                        {images.map( ( src ) => <Carousel.Item key={src}>
+                            <Image src={src}
+                                alt="InnoManager"
+                                fill
+                                priority />
+                        </Carousel.Item> )}
+                    </Carousel.Wrapper>
+                </Dialog>
+            </>
             }
         </div>
         <ul>

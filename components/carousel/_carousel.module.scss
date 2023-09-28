@@ -1,7 +1,8 @@
 .carousel {
     @apply
         relative
-        overflow-hidden;
+        overflow-hidden
+        h-full;
 
     &__wrapper {
         @apply

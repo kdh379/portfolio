@@ -5,17 +5,25 @@
         border-r
         absolute
         top-0
-        px-4
+        scroll-pr-4
+        box-border
         z-20
-        transition-[left]
+        shadow-2xl
+        transition-all
         duration-500
         -left-sidebar
+        desktop:shadow-none
         desktop:left-0;
 
     &__wrapper {
         @apply
+            px-4
             sticky
+            flex
+            flex-col
             h-screen
+            min-h-0
+            overflow-y-auto
             py-6
             top-0;
 
@@ -37,7 +45,7 @@
         }
     }
 
-    &__overlay {
+    &__backdrop {
         @apply
             fixed
             inset-0
@@ -51,6 +59,7 @@
     &__action {
         @apply
             mt-6
+            pb-6
             flex
             gap-2;
 
@@ -92,10 +101,7 @@
 
     &__footer {
         @apply
-            absolute
-            bottom-0;
-        
-        padding-bottom: inherit;
+            mt-auto;
 
         > ol {
             @apply
@@ -165,7 +171,11 @@ html[data-sidebar="true"] {
 }
 
 html[data-sidebar="false"] {
-    .sidebar__overlay {
+    .sidebar__backdrop {
         @apply hidden;
+    }
+
+    .sidebar {
+        @apply shadow-none;
     }
 }

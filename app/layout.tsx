@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Providers from "./provider";
 
 import App from "components/app";
-
 import "styles/globals.scss";
 
 const inter = Inter( { subsets: ["latin"] } );
@@ -32,6 +31,7 @@ export default function RootLayout( {
                         {children}
                     </App>
                 </Providers>
+                <div id="dialog"></div>
             </body>
         </html>
     );

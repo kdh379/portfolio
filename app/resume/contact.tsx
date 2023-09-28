@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaPhone, FaRegEnvelopeOpen } from "react-icons/fa";
+import { FaBirthdayCake, FaMapMarkerAlt, FaPhone, FaRegEnvelopeOpen } from "react-icons/fa";
 
 import style from "./_contact.module.scss";
 
@@ -18,6 +18,16 @@ export default function Contact() {
         />
         <ul className={style.contact}>
             <li>
+                <FaBirthdayCake />
+                <h2>Birthday</h2>
+                <p>{data.birth}</p>
+            </li>
+            <li>
+                <FaMapMarkerAlt />
+                <h2>Visit us</h2>
+                <p>{data.address}</p>
+            </li>
+            <li>
                 <FaPhone />
                 <h2>Call us</h2>
                 <p>{data.phone}</p>
@@ -26,11 +36,6 @@ export default function Contact() {
                 <FaRegEnvelopeOpen />
                 <h2>Email us</h2>
                 <p>{data.email}</p>
-            </li>
-            <li>
-                <FaMapMarkerAlt />
-                <h2>Visit us</h2>
-                <p>{data.address}</p>
             </li>
         </ul>
     </Section>;
