@@ -24,7 +24,7 @@ export default function AppHeader() {
             onClick={handleMenuClick}
             aria-label="메뉴 열기"
         >
-            <BiMenu />
+            <BiMenu size={32} />
         </Button>
     </header>;
 }
