@@ -40,6 +40,9 @@ const tailwindConfig = {
             borderColor: {
                 DEFAULT: "hsl(var(--bc)/20%)",
             },
+            transitionDuration: {
+                layout: 300,
+            },
         },
     },
     plugins: [require( "daisyui" )],
