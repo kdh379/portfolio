@@ -1,38 +1,38 @@
-import { FaUserCircle, FaCode, FaBriefcase, FaRegEdit, FaPhone } from "react-icons/fa";
+import { FaUserCircle, FaCode, FaBriefcase, FaRegEdit, FaGraduationCap } from "react-icons/fa";
 
-export declare type ResumeTitle = "About Me" | "Skills" | "Experience" | "Projects" | "Blog" | "Contact";
+export declare type ResumeKey = "About Me" | "Skills" | "Experience" | "Education" | "Blog";
 
 export interface Resume {
-    title: ResumeTitle;
+    id: ResumeKey;
     href: string;
     icon: JSX.Element;
 }
 
 export const resumeList: Resume[] = [
     {
-        title: "About Me",
+        id: "About Me",
         href: "about",
         icon: <FaUserCircle />,
     },
     {
-        title: "Skills",
+        id: "Skills",
         href: "skills",
         icon: <FaCode />,
     },
     {
-        title: "Experience",
+        id: "Experience",
         href: "experience",
         icon: <FaBriefcase />,
     },
     {
-        title: "Blog",
-        href: "blog",
-        icon: <FaRegEdit />,
+        id: "Education",
+        href: "education",
+        icon: <FaGraduationCap />,
     },
     {
-        title: "Contact",
-        href: "contact",
-        icon: <FaPhone />,
+        id: "Blog",
+        href: "blog",
+        icon: <FaRegEdit />,
     },
 ];
 
@@ -40,9 +40,9 @@ export function useResumeList( ) {
     return resumeList;
 }
 
-export function useResume( key: ResumeTitle ): Resume {
+export function useResume( key: ResumeKey ): Resume {
 
-    const resume = resumeList.find( ( resume ) => resume.title === key );
+    const resume = resumeList.find( ( resume ) => resume.id === key );
 
     if ( !resume ) {
         throw new Error( `Resume with title "${key}" not found.` );

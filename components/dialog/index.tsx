@@ -11,9 +11,8 @@ import style from "./_dialog.module.scss";
 import Button from "components/button";
 import Modal from "components/modal";
 
-interface DialogProps {
+interface DialogProps extends ClassNameProps {
     isOpen: boolean;
-    className?: string;
 
     onClose: ( isShow: boolean ) => void;
 }

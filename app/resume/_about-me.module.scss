@@ -1,30 +1,68 @@
 .about-me {
-    @apply h-full
-        mx-auto
-        max-w-[750px]
+    @apply
         flex
         flex-col
-        justify-center;
-    
+        gap-4
+        mb-4;
 
-    > hgroup {
-        @apply 
-            flex
-            flex-wrap
-            gap-2
-            mb-4;
+    > h1 {
+        @apply
+            text-2xl
+            font-bold
+            text-accent-content;
+    }
 
-        > h1 {
-            @apply 
-                text-3xl
-                font-bold
-                text-accent-content;
+    > h2 {
+        @apply
+            mt-4
+            text-xl
+            font-bold
+            text-accent-content;
+    }
+
+    > table {
+        > tbody {
+            > tr {
+                @apply
+                    transition-colors;
+
+                &:hover, &:focus {
+                    @apply
+                        text-accent-content;
+                }
+
+                > th, td {
+                    @apply
+                        py-1;
+                }
+
+                > th {
+                    @apply
+                        w-24
+                        text-left
+                        align-top;
+                }
+            }
+
         }
     }
-    
 
-    > p {
-        @apply 
-            text-xl;
+    &__ul {
+        > li {
+            @apply
+                pt-1;
+        }
+    }
+
+    &__link {
+        @apply
+            underline
+            break-all
+            cursor-pointer;
+
+        &:hover, &:focus {
+            @apply
+                text-info/75;
+        }
     }
 }

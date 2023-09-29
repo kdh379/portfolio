@@ -2,6 +2,7 @@
     @apply
         duration-layout
         transition-[padding-left]
+        pt-appHeader
         desktop:pl-sidebar
-        desktop:mt-0;
+        desktop:pt-0;
 }

@@ -14,7 +14,10 @@
         "tistory",
         "trackbacks",
         "tanstack",
-        "gomban"
+        "gomban",
+        "Hyeon",
+        "Mybatis",
+        "JDBC"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",

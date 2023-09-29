@@ -1,14 +1,32 @@
 {
     "name": "김도현",
+    "email": "ehgus37625@naver.com",
     "engName": "Kim Do Hyeon",
     "job": "Web Developer",
-    "email": "ehgus37625@naver.com",
     "birth": "1997.10.01",
-    "phone": "010-8932-2078",
     "address": "경기도 성남시 수정구",
-    "links": {
-        "github": "https://github.com/kdh379",
-        "blog": "https://gomban.tistory.com/",
-        "code": "https://github.com/kdh379/portfolio"
-    }
+    "introduction": [
+        "안녕하세요! 2년차 웹 개발자 김도현입니다.",
+        "좋은 결과물은 강한 오너쉽에서 나온다고 생각합니다.",
+        "사용자의 입장에서 생각하며, 사용자가 편리한 서비스를 만들기 위해 노력합니다.",
+        "현재 IT 기업에서 B2B를 위한 웹 서비스를 개발하고 있습니다."
+    ],
+    "title": "개발을 즐기는 개발자, 김도현 입니다.",
+    "channels": [
+        {
+            "name": "blog",
+            "url": "https://gomban.tistory.com/",
+            "description": "배운 것을 잊지 않기 위해 기록해두고 있는 블로그 입니다."
+        },
+        {
+            "name": "resume",
+            "url": "https://kdh-portfolio.vercel.app/",
+            "description": "직접 구현한 이력서 포트폴리오 웹사이트 입니다."
+        },
+        {
+            "name": "github",
+            "url": "https://github.com/kdh379",
+            "description": "저의 Playground인 Github 입니다."
+        }
+    ]
 }

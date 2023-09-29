@@ -1,5 +1,7 @@
 "use client";
 
+import { memo } from "react";
+
 import { clsx } from "clsx";
 import { BiMenu } from "react-icons/bi";
 
@@ -8,7 +10,7 @@ import style from "./_app-header.module.scss";
 import Button from "components/button";
 import data from "data/profile.json";
 
-export default function AppHeader() {
+export const AppHeader = memo( () => {
 
     const handleMenuClick = () => {
         const html = document.querySelector( "html" );
@@ -27,4 +29,8 @@ export default function AppHeader() {
             <BiMenu size={32} />
         </Button>
     </header>;
-}
+} );
+
+AppHeader.displayName = "AppHeader";
+
+export default AppHeader;

@@ -4,8 +4,7 @@ import { clsx } from "clsx";
 
 import style from "./_button.module.scss";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ClassNameProps {
 }
 
 export default function Button( props: PropsWithChildren<ButtonProps> ) {

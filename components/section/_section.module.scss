@@ -3,4 +3,16 @@
         border-b
         py-6
         px-4;
+
+    > h1 {
+        @apply 
+            w-full
+            flex
+            items-center
+            text-accent-content
+            font-extrabold
+            text-3xl
+            gap-2
+            mb-4;
+    }
 }

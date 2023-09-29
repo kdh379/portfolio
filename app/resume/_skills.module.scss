@@ -49,23 +49,4 @@
         }
     }
 
-    > ol {
-        @apply
-            text-sm
-            pl-6;
-        
-        > li {
-            @apply
-                pt-1
-                transition-colors
-                cursor-default
-                list-disc;
-            
-            &:hover, &:focus {
-                @apply
-                    text-accent-content;
-            }
-        }
-    }
-
 }

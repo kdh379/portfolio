@@ -1,7 +1,7 @@
 import style from "./_page.module.scss";
 import AboutMe from "./about-me";
 import Blog from "./blog";
-import Contact from "./contact";
+import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
 
@@ -11,7 +11,7 @@ export default function Resume() {
         <AboutMe />
         <Skills />
         <Experience />
+        <Education />
         <Blog />
-        <Contact />
     </main>;
 }

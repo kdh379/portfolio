@@ -1,0 +1,16 @@
+.list {
+    @apply
+        list-disc
+        pl-5;
+
+    > li {
+        @apply
+            mt-1
+            transition-colors;
+        
+        &:hover, &:focus {
+            @apply
+                text-accent-content;
+        }
+    }
+}

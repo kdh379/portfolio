@@ -9,11 +9,10 @@ import style from "./_experience.module.scss";
 
 import Carousel from "components/carousel/carousel";
 import Dialog from "components/dialog";
+import List from "components/list/list";
 import Section from "components/section";
 import Tag from "components/tag";
-import Title from "components/title";
 import data from "data/experience.json";
-import { useResume } from "hooks/resume-list";
 
 type ExperienceItemProps = typeof data.experience[number];
 type ProjectItemProps = ExperienceItemProps["project"][number];
@@ -32,9 +31,9 @@ function ProjectItem( props: ProjectItemProps ) {
 
     const [isShowImage, setIsShowImage] = useState( false );
 
-    return <li className={style["project"]}>
-        <div className={style["project__wrapper"]}>
-            <div className={style["project__detail"]}>
+    return <li className={style.project}>
+        <div className={style.project__wrapper}>
+            <div className={style.project__detail}>
                 <hgroup>
                     <h2>{name}</h2>
                     <p>{subtitle}</p>
@@ -49,12 +48,11 @@ function ProjectItem( props: ProjectItemProps ) {
                     </li>
                     <li>
                         <h3>주요 업무</h3>
-                        <ul>
-                            {majors.map( ( major ) => <li key={major}
-                                className="list-disc ml-4">
+                        <List.Wrapper>
+                            {majors.map( ( major ) => <List.Item key={major}>
                                 {major}
-                            </li> )}
-                        </ul>
+                            </List.Item> )}
+                        </List.Wrapper>
                     </li>
                 </ul>
             </div>
@@ -92,12 +90,11 @@ function ProjectItem( props: ProjectItemProps ) {
             <li>
                 { feature.length > 0 && <>
                     <h3>강점</h3>
-                    <ul>
-                        {feature.map( ( feature ) => <li key={feature}
-                            className="list-disc ml-4">
+                    <List.Wrapper>
+                        {feature.map( ( feature ) => <List.Item key={feature}>
                             {feature}
-                        </li> )}
-                    </ul>
+                        </List.Item> )}
+                    </List.Wrapper>
                 </> }
             </li>
             <li>
@@ -119,13 +116,13 @@ function ExperienceItem( props: ExperienceItemProps ) {
     } = props;
 
     return <article className={style["experience-item"]}>
-        <Tag>{period}</Tag>
         <hgroup>
             <h2>{company}</h2>
-            <span>{belong}</span>
-            <ol>
-                {task.map( ( task ) => <li key={task}>{task}</li> )}
-            </ol>
+            <p>{belong}</p>
+            <Tag>{period}</Tag>
+            <List.Wrapper className="mt-2">
+                {task.map( ( task ) => <List.Item key={task}>{task}</List.Item> )}
+            </List.Wrapper>
         </hgroup>
         <h3>Projects</h3>
         <ul>
@@ -138,13 +135,7 @@ function ExperienceItem( props: ExperienceItemProps ) {
 
 export default function Experience() {
 
-    const resume = useResume( "Experience" );
-
-    return <Section id={resume.href}>
-        <Title
-            headerText={resume.title}
-            icon={resume.icon}
-        />
+    return <Section id="Experience">
         {data.experience.map( ( experience ) =>
             <ExperienceItem key={experience.id}
                 {...experience} /> )}

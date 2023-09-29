@@ -1,0 +1,19 @@
+@media print {
+    :is(h1, h2, h3, h4, h5, h6, svg) {
+        color: theme("colors.base-300") !important;
+    }
+
+    main {
+        padding-top: 0 !important;
+    }
+
+    section:not([data-print-avoid="true"]) {
+        @apply
+            break-after-page
+            h-screen;
+    }
+
+    span {
+        background-color: theme("colors.base-300") !important;
+    }
+}

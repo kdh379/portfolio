@@ -6,10 +6,8 @@ import BlogPost from "./blog-post";
 import AsyncBoundary from "components/boundary/async-boundary";
 import Button from "components/button";
 import Section from "components/section";
-import Title from "components/title";
 import { getCategoryList } from "hooks/category-list";
 import { getPostList } from "hooks/post-list";
-import { useResume } from "hooks/resume-list";
 import { getAPIInfo } from "utils/api";
 import getQueryClient from "utils/query-client";
 import { getTistoryAccessToken } from "utils/tistory-token";
@@ -21,14 +19,9 @@ const POST_LIST_PARAMS = {
 } as const;
 
 export default function Blog() {
-
-    const { href, icon, title } = useResume( "Blog" );
-
-    return <Section id={href}>
-        <Title
-            headerText={title}
-            icon={icon}
-        />
+    return <Section id="Blog"
+        printAvoid
+    >
         <AsyncBoundary
             serverErrorFallback={<ErrorFallback />}
         >

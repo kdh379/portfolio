@@ -1,0 +1,35 @@
+.education {
+    @apply
+        bg-base-200
+        rounded-md
+        p-4
+        mt-4
+        flex
+        flex-col
+        transition-colors;
+
+    &:hover, &:focus {
+        @apply bg-base-300;
+    }
+
+    > h2 {
+        @apply
+            text-2xl
+            font-bold
+            text-accent-content;
+    }
+    
+    > h3 {
+        @apply
+            mt-1
+            text-sm
+            font-medium
+            tracking-wide
+            opacity-75;
+    }
+
+    > span {
+        @apply
+            mt-2;
+    }
+}

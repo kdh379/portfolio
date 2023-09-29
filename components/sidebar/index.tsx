@@ -4,19 +4,18 @@ import { memo, useState } from "react";
 
 import { clsx } from "clsx";
 import Image from "next/image";
-import { BiCode, BiLogoGithub, BiMoon, BiSun } from "react-icons/bi";
-import { SiTistory } from "react-icons/si";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 import style from "./_sidebar.module.scss";
 
 import Button from "components/button";
+import Icon, { isValidIcon } from "components/link-icon";
 import data from "data/profile.json";
 import { Resume, useResumeList } from "hooks/resume-list";
 
 declare type Theme = "light" | "dark";
 
 const BI_ICON_SIZE = 24;
-const SI_ICON_SIZE = 16;
 
 interface SidebarNavItemProps extends Resume {
     onClick: () => void;
@@ -24,7 +23,7 @@ interface SidebarNavItemProps extends Resume {
 
 function SidebarNavItem( props: SidebarNavItemProps ) {
 
-    const { title, href, icon, onClick } = props;
+    const { id: title, href, icon, onClick } = props;
 
     return <li className={style["sidebar__nav-item"]}>
         <a href={`#${href}`}
@@ -80,9 +79,9 @@ export const Sidebar = memo( () => {
                 </hgroup>
                 <nav>
                     <ul>
-                        {resumeList.map( ( { title, href, icon } ) =>
-                            <SidebarNavItem key={href}
-                                title={title}
+                        {resumeList.map( ( { id, href, icon } ) =>
+                            <SidebarNavItem key={id}
+                                id={id}
                                 href={href}
                                 icon={icon}
                                 onClick={handleSidebarClose} /> )}
@@ -107,36 +106,17 @@ export const Sidebar = memo( () => {
                 </div>
                 <div className={style.sidebar__footer}>
                     <ol>
-                        <li>
-                            <a href={data.links.github}
-                                target="_blank"
-                                rel="noreferrer">
-                                <Button className={style.sidebar__link}
-                                    aria-label="Github">
-                                    <BiLogoGithub size={BI_ICON_SIZE} />
-                                </Button>
-                            </a>
-                        </li>
-                        <li>
-                            <a href={data.links.blog}
-                                target="_blank"
-                                rel="noreferrer">
-                                <Button className={style.sidebar__link}
-                                    aria-label="Tistory">
-                                    <SiTistory size={SI_ICON_SIZE} />
-                                </Button>
-                            </a>
-                        </li>
-                        <li>
-                            <a href={data.links.code}
-                                target="_blank"
-                                rel="noreferrer">
-                                <Button className={style.sidebar__link}
-                                    aria-label="Code">
-                                    <BiCode size={BI_ICON_SIZE} />
-                                </Button>
-                            </a>
-                        </li>
+                        {data.channels.map( ( channel ) =>
+                            <li key={channel.name}>
+                                <a href={channel.url}
+                                    target="_blank"
+                                    rel="noreferrer">
+                                    <Button className={style.sidebar__link}
+                                        aria-label="Github">
+                                        { isValidIcon( channel.name ) && <Icon name={channel.name} />}
+                                    </Button>
+                                </a>
+                            </li> )}
                     </ol>
                     <p>© 2023 {data.engName}</p>
                 </div>

@@ -1,0 +1,27 @@
+{
+    "education": [
+        {
+            "id": 0,
+            "title": "자바기반 AWS 활용 Full-Stack",
+            "date": "2021. 07 ~ 2022.01",
+            "subTitle": "쌍용교육센터",
+            "content": [
+                "자바에 대해 기본부터 심화과정까지 학습하여 웹을 직접 구현해보는 교육과정",
+                "조별 DynamicWeb 프로젝트 구현",
+                "B/E : Spring Boot, Mybatis, MySQL",
+                "F/E : JSP, JQuery, JavaScript",
+                "CI/CD : Github"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "신구대학교 정보통신과",
+            "subTitle": "신구대학교",
+            "date": "2017. 03 ~ 2019.02",
+            "content": [
+                "네트워크 TCP/UDP, OSI 7Layer, Network Protocol에 대한 이해",
+                "Java 기반의 FullStack 교육으로, JDBC, Swing을 이용한 프로젝트 구현"
+            ]
+        }
+    ]
+}

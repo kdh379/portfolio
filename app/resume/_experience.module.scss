@@ -2,7 +2,9 @@
     @apply mt-6;
 
     > hgroup {
-        @apply mt-4;
+        @apply mt-4
+            flex
+            flex-col;
 
         > h2 {
             @apply text-accent-content
@@ -10,27 +12,18 @@
                 font-bold;
         }
 
-        > span {
-            @apply text-base-content
+        > p {
+            @apply
+                mt-1
                 text-sm
                 font-medium
                 tracking-wide
                 opacity-75;
         }
 
-        > ol {
-            @apply flex
-                flex-col
-                flex-wrap
-                mt-2
-                ml-5
-                list-disc;
-            
-            > li {
-                &:hover, &:focus {
-                    @apply text-accent-content;
-                }
-            }
+        > span {
+            @apply
+                mt-2;
         }
     }
 
@@ -48,6 +41,7 @@
         mt-4
         bg-base-200
         rounded-md
+        transition-colors
         p-4;
     
     &:hover, &:focus {
@@ -78,7 +72,12 @@
             > p {
                 @apply mt-2
                     font-medium
+                    transition-colors
                     tracking-wide;
+
+                &:hover, &:focus {
+                    @apply text-accent-content;
+                }
             }
         }
         > ul {
@@ -93,24 +92,6 @@
                         text-accent-content
                         font-bold
                         mb-2;
-                }
-    
-                > p {
-                    @apply mt-2;
-    
-                    &:hover, &:focus {
-                        @apply text-accent-content;
-                    }
-                }
-    
-                > ul {
-                    @apply mt-2;
-    
-                    > li {
-                        &:hover, &:focus {
-                            @apply text-accent-content;
-                        }
-                    }
                 }
             }
         }
@@ -151,7 +132,8 @@
             }
 
             > p {
-                @apply mt-2;
+                @apply mt-2
+                    transition-colors;
 
                 &:hover, &:focus {
                     @apply text-accent-content;
