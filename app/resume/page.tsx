@@ -5,9 +5,12 @@ import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
 
+import PrintButton from "components/print-button";
+
 export default function Resume() {
 
     return <main className={style.main}>
+        <PrintButton />
         <AboutMe />
         <Skills />
         <Experience />

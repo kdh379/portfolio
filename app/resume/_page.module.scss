@@ -1,6 +1,7 @@
 .main {
     @apply
         duration-layout
+        relative
         transition-[padding-left]
         pt-appHeader
         desktop:pl-sidebar

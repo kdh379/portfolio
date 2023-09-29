@@ -1,0 +1,12 @@
+.print-button {
+    @apply
+        bottom-10
+        -right-full
+        text-2xl
+        bg-base-200
+        p-2
+        fixed
+        transition-[right]
+        desktop:right-10
+        print:hidden;
+}
