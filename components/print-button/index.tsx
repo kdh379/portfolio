@@ -8,6 +8,7 @@ import Button from "components/button";
 
 export default function PrintButton() {
     return <Button
+        aria-label="Print"
         className={style["print-button"]}
         onClick={() => window.print()}>
         <AiFillPrinter />
