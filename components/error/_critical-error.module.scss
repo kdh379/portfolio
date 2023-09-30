@@ -1,0 +1,29 @@
+.critical-error {
+    @apply 
+        fixed
+        inset-0
+        flex
+        flex-col
+        items-center
+        justify-center;
+
+    > svg {
+        @apply 
+            text-3xl
+            text-error
+            mb-4;
+    }
+
+    > h1 {
+        @apply 
+            text-2xl
+            text-accent-content
+            font-extrabold
+            mb-4;
+    }
+
+    > p {
+        @apply 
+            text-accent-content;
+    }
+}

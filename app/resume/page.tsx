@@ -10,7 +10,7 @@ import PrintButton from "components/print-button";
 export default function Resume() {
 
     return <main className={style.main}>
-        <PrintButton />
+        <PrintButton/>
         <AboutMe />
         <Skills />
         <Experience />
