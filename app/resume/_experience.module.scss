@@ -149,6 +149,23 @@
                     }
                 }
             }
+            > ol {
+                @apply mt-4;
+                > li {
+                    @apply mt-2
+                        transition-colors;
+    
+                    &:hover, &:focus {
+                        @apply text-accent-content;
+                    }
+
+                    > h4 {
+                        @apply
+                            text-accent-content
+                            font-bold;
+                    }
+                }
+            }
         }
     }
 }

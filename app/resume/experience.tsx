@@ -99,7 +99,12 @@ function ProjectItem( props: ProjectItemProps ) {
             </li>
             <li>
                 <h3>내용</h3>
-                <p>{detail}</p>
+                <ol>
+                    {detail.map( ( detail ) => <li key={detail.title}>
+                        <h4>{detail.title}</h4>
+                        <p>{detail.content}</p>
+                    </li> ) }
+                </ol>
             </li>
         </ul>
     </li>;
