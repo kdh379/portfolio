@@ -37,7 +37,6 @@
 
 .project {
     @apply
-        relative
         mt-4
         bg-base-200
         rounded-md
@@ -48,122 +47,49 @@
         @apply bg-base-300;
     }
 
-    &__wrapper {
-        @apply
-            flex
-            flex-wrap-reverse
-            gap-4
-            tablet:grid
-            tablet:grid-cols-2
-            tablet:gap-8;
+    > h2 {
+        @apply 
+            text-accent-content
+            text-2xl
+            font-bold;
     }
 
-    &__detail {
-        @apply flex-1;
+    > p {
+        @apply mt-2
+            font-medium
+            transition-colors
+            tracking-wide;
 
-        > hgroup {
-            > h2 {
-                @apply 
-                    text-accent-content
-                    text-2xl
-                    font-bold;
-            }
-    
-            > p {
-                @apply mt-2
-                    font-medium
-                    transition-colors
-                    tracking-wide;
-
-                &:hover, &:focus {
-                    @apply text-accent-content;
-                }
-            }
+        &:hover, &:focus {
+            @apply text-accent-content;
         }
-        > ul {
-            @apply mt-4;
-    
+    }
+
+    // 프로젝트 설명 목록
+    > ul > li {
+        @apply mt-4;
+
+        > h3 {
+            @apply 
+                text-accent-content
+                font-bold;
+        }
+
+        // 프로젝트 상세 설명
+        > ol {
+            @apply mt-2
+                pl-5
+                list-decimal;
+
             > li {
                 @apply
-                    mt-4;
-    
-                > h3 {
-                    @apply 
-                        text-accent-content
-                        font-bold
-                        mb-2;
-                }
-            }
-        }
-    }
+                    mt-2;
 
-
-
-    &__image {
-        @apply
-            relative
-            w-full
-            aspect-video
-            flex
-            justify-center
-            items-center
-            text-4xl
-            transition-[font-size]
-            hover:text-6xl;
-
-        &-dialog {
-            @apply
-                aspect-video
-                w-[calc(100vw-2rem)]
-                tablet:w-[calc(100vw-8rem)]
-                desktop:w-[70%];
-        }
-    }
-
-
-    > ul {
-        > li {
-            @apply mt-4;
-
-            > h3 {
-                @apply 
-                    text-accent-content
-                    font-bold;
-            }
-
-            > p {
-                @apply mt-2
-                    transition-colors;
-
-                &:hover, &:focus {
-                    @apply text-accent-content;
-                }
-            }
-
-            > ul {
-                @apply mt-2;
-
-                > li {
-                    &:hover, &:focus {
-                        @apply text-accent-content;
-                    }
-                }
-            }
-            > ol {
-                @apply mt-4;
-                > li {
-                    @apply mt-2
-                        transition-colors;
-    
-                    &:hover, &:focus {
-                        @apply text-accent-content;
-                    }
-
-                    > h4 {
-                        @apply
-                            text-accent-content
-                            font-bold;
-                    }
+                &::marker,
+                > h4 {
+                    @apply
+                        font-medium
+                        text-accent-content;
                 }
             }
         }

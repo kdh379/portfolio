@@ -71,7 +71,8 @@ export const Sidebar = memo( () => {
                     <Image src="/images/profile.jpg"
                         alt="Profile"
                         width={300}
-                        height={300} />
+                        height={300}
+                        priority />
                 </div>
                 <hgroup>
                     <header>{data.name}</header>
