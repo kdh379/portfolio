@@ -140,7 +140,8 @@ function ExperienceItem( props: ExperienceItemProps ) {
 
 export default function Experience() {
 
-    return <Section id="Experience">
+    return <Section id="Experience"
+        printAvoid>
         {data.experience.map( ( experience ) =>
             <ExperienceItem key={experience.id}
                 {...experience} /> )}
