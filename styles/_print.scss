@@ -13,6 +13,10 @@
             h-screen;
     }
 
+    section[data-print="false"] {
+        display: none;
+    }
+
     span {
         background-color: theme("colors.base-300") !important;
     }

@@ -20,7 +20,7 @@ const POST_LIST_PARAMS = {
 
 export default function Blog() {
     return <Section id="Blog"
-        printAvoid
+        print={false}
     >
         <AsyncBoundary
             serverErrorFallback={<ErrorFallback />}
