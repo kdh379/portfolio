@@ -23,14 +23,10 @@
             @apply
                 w-14
                 h-14
-                min-w-max
                 text-accent-content;
         }
     
         > div {
-            @apply
-                flex-1;
-                
             > h2 {
                 @apply
                     flex
