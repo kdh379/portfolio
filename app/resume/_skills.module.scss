@@ -28,6 +28,9 @@
         }
     
         > div {
+            @apply
+                flex-1;
+                
             > h2 {
                 @apply
                     flex
