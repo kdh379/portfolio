@@ -20,18 +20,18 @@ function ProjectItem( props: ProjectItemProps ) {
     } = props;
 
     return <li className={style.project}>
-        <h2>{name}</h2>
+        <h4>{name}</h4>
         <p>{subtitle}</p>
         <ul>
             <li>
-                <h3>역할</h3>
+                <h5>역할</h5>
                 <div className="flex gap-2 flex-wrap mt-2">
                     {roleList.map( ( role ) =>
                         <Tag key={role}>{role}</Tag> )}
                 </div>
             </li>
             <li>
-                <h3>주요 업무</h3>
+                <h5>주요 업무</h5>
                 <List.Wrapper>
                     {majors.map( ( major ) => <List.Item key={major}>
                         {major}
@@ -40,7 +40,7 @@ function ProjectItem( props: ProjectItemProps ) {
             </li>
             <li>
                 { feature.length > 0 && <>
-                    <h3>강점</h3>
+                    <h5>강점</h5>
                     <List.Wrapper>
                         {feature.map( ( feature ) => <List.Item key={feature}>
                             {feature}
@@ -49,7 +49,7 @@ function ProjectItem( props: ProjectItemProps ) {
                 </> }
             </li>
             <li>
-                <h3>내용</h3>
+                <h5>내용</h5>
                 <ol>
                     {detail.map( ( detail ) => <li key={detail.id}>
                         <h4>{detail.title}</h4>
