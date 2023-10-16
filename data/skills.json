@@ -75,6 +75,7 @@
                 "Hooks",
                 "Context API",
                 "Recoil",
+                "React-Query",
                 "Concurrent UI",
                 "framer-motion",
                 "echarts"
@@ -84,8 +85,7 @@
                 "Hooks을 사용하여 재사용 가능한 로직을 구현합니다.",
                 "Context API와 Recoil을 사용하여 전역 상태를 관리합니다.",
                 "Concurrent UI 패턴을 사용하여 사용자 경험을 향상시킵니다.",
-                "framer-motion을 사용하여 JS 애니메이션을 구현합니다.",
-                "echarts를 사용하여 데이터 시각화를 구현합니다."
+                "오픈소스 없이도 필요한 UI 컴포넌트를 직접 구현합니다."
             ]
         },
         {

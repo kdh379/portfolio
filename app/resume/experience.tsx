@@ -74,15 +74,21 @@ function ExperienceItem( props: ExperienceItemProps ) {
         task,
     } = props;
 
-    return <article className={style["experience-item"]}>
+    return <article className={style.experience}>
         <hgroup>
             <h2>{company}</h2>
             <p>{belong}</p>
             <Tag>{period}</Tag>
-            <List.Wrapper className="mt-2">
-                {task.map( ( task ) => <List.Item key={task}>{task}</List.Item> )}
-            </List.Wrapper>
         </hgroup>
+        <h3>Description</h3>
+        <List.Wrapper>
+            {task.map( ( task ) => <List.Item key={task}>{task}</List.Item> )}
+        </List.Wrapper>
+        <h3>TechStack</h3>
+        <ul className="flex gap-2 flex-wrap">
+            {props.techStack.map( ( tech ) =>
+                <Tag key={tech}>{tech}</Tag> )}
+        </ul>
         <h3>Projects</h3>
         <ul>
             {project.map( ( project ) =>

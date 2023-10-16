@@ -105,15 +105,15 @@
 
         > ol {
             @apply
+                mb-2
                 flex
                 gap-2;
         }
 
         > p {
             @apply
-                mt-2
                 text-sm
-                opacity-25;
+                opacity-50;
         }
     }
 

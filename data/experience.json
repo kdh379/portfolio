@@ -5,7 +5,19 @@
             "company": "(주)이노룰스",
             "period": "2022.03 ~ 현재",
             "belong": "기술연구소 제품기술팀",
-            "task": ["웹 서비스 개발", "솔루션 설치 및 기술지원"],
+            "task": [
+                "신규 솔루션 웹 애플리케이션 프론트엔드 개발",
+                "백오피스 웹 프론트엔드 신규 기능 개발",
+                "기존 솔루션 기술지원"
+            ],
+            "techStack": [
+                "TypeScript",
+                "React",
+                "Sass",
+                "tailwindcss",
+                "vite",
+                "astro"
+            ],
             "project": [
                 {
                     "id": 0,

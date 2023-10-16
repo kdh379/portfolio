@@ -119,7 +119,7 @@ export const Sidebar = memo( () => {
                                 </a>
                             </li> )}
                     </ol>
-                    <p>© 2023 {data.engName}</p>
+                    <p>Last updated: 2023.10.16</p>
                 </div>
             </div>
         </header>

@@ -1,43 +1,44 @@
-.experience-item {
-    @apply mt-6;
-
+.experience {
     > hgroup {
-        @apply mt-4
+        @apply
+            mb-4
             flex
             flex-col;
 
         > h2 {
-            @apply text-accent-content
+            @apply
+                mb-2
+                text-accent-content
                 text-2xl
                 font-bold;
         }
 
         > p {
             @apply
-                mt-1
+                mb-2
                 text-sm
                 font-medium
                 tracking-wide
                 opacity-75;
         }
-
-        > span {
-            @apply
-                mt-2;
-        }
     }
-
     > h3 {
-        @apply mt-2
+        @apply
+            mb-2
             text-accent-content
             text-xl
             font-bold;
+    }
+
+    > ul {
+        @apply
+            mb-4
     }
 }
 
 .project {
     @apply
-        mt-4
+        mb-4
         bg-base-200
         rounded-md
         transition-colors
@@ -48,14 +49,16 @@
     }
 
     > h2 {
-        @apply 
+        @apply
+            mb-2
             text-accent-content
             text-2xl
             font-bold;
     }
 
     > p {
-        @apply mt-2
+        @apply
+            mb-4
             font-medium
             transition-colors
             tracking-wide;
@@ -67,17 +70,19 @@
 
     // 프로젝트 설명 목록
     > ul > li {
-        @apply mt-4;
+        @apply
+            mb-4;
 
         > h3 {
-            @apply 
+            @apply
+                mb-2
                 text-accent-content
                 font-bold;
         }
 
         // 프로젝트 상세 설명
         > ol {
-            @apply mt-2
+            @apply
                 pl-5
                 list-decimal;
 
