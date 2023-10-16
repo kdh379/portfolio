@@ -8,15 +8,27 @@ import data from "data/experience.json";
 type ExperienceItemProps = typeof data.experience[number];
 type ProjectItemProps = ExperienceItemProps["project"][number];
 
+const TECH_STACK_LABEL = {
+    core: "코어",
+    state: "상태 관리",
+    styling: "스타일링",
+    package: "패키지",
+    build: "빌드",
+    "ci/cd": "CI/CD",
+} as const;
+
+const hasTechStackKey = ( key: string ): key is keyof typeof TECH_STACK_LABEL =>
+    Object.keys( TECH_STACK_LABEL ).includes( key );
+
 function ProjectItem( props: ProjectItemProps ) {
 
     const {
-        roleList,
         majors,
         detail,
         name,
         subtitle,
         feature,
+        techStack,
     } = props;
 
     return <li className={style.project}>
@@ -24,18 +36,20 @@ function ProjectItem( props: ProjectItemProps ) {
         <p>{subtitle}</p>
         <ul>
             <li>
-                <h5>역할</h5>
-                <div className="flex gap-2 flex-wrap mt-2">
-                    {roleList.map( ( role ) =>
-                        <Tag key={role}>{role}</Tag> )}
-                </div>
-            </li>
-            <li>
-                <h5>주요 업무</h5>
+                <h5>주요 역할</h5>
                 <List.Wrapper>
                     {majors.map( ( major ) => <List.Item key={major}>
                         {major}
                     </List.Item> )}
+                </List.Wrapper>
+            </li>
+            <li>
+                <h5>기술 스택</h5>
+                <List.Wrapper>
+                    {Object.entries( techStack ).map( ( [key, value] ) =>
+                        <List.Item key={key}>
+                            <p>{hasTechStackKey( key ) && TECH_STACK_LABEL[key]} : {value.join( ", " )}</p>
+                        </List.Item> )}
                 </List.Wrapper>
             </li>
             <li>
@@ -84,11 +98,6 @@ function ExperienceItem( props: ExperienceItemProps ) {
         <List.Wrapper>
             {task.map( ( task ) => <List.Item key={task}>{task}</List.Item> )}
         </List.Wrapper>
-        <h3>TechStack</h3>
-        <ul className="flex gap-2 flex-wrap">
-            {props.techStack.map( ( tech ) =>
-                <Tag key={tech}>{tech}</Tag> )}
-        </ul>
         <h3>Projects</h3>
         <ul>
             {project.map( ( project ) =>
