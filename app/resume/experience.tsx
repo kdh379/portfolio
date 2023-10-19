@@ -24,10 +24,10 @@ function ProjectItem( props: ProjectItemProps ) {
 
     const {
         majors,
-        detail,
+        period,
+        details,
         name,
         subtitle,
-        feature,
         techStack,
     } = props;
 
@@ -36,15 +36,11 @@ function ProjectItem( props: ProjectItemProps ) {
         <p>{subtitle}</p>
         <ul>
             <li>
-                <h5>주요 역할</h5>
-                <List.Wrapper>
-                    {majors.map( ( major ) => <List.Item key={major}>
-                        {major}
-                    </List.Item> )}
-                </List.Wrapper>
+                <h5>Period</h5>
+                <Tag>{period}</Tag>
             </li>
             <li>
-                <h5>기술 스택</h5>
+                <h5>Tech Stack</h5>
                 <List.Wrapper>
                     {Object.entries( techStack ).map( ( [key, value] ) =>
                         <List.Item key={key}>
@@ -53,22 +49,20 @@ function ProjectItem( props: ProjectItemProps ) {
                 </List.Wrapper>
             </li>
             <li>
-                { feature.length > 0 && <>
-                    <h5>강점</h5>
-                    <List.Wrapper>
-                        {feature.map( ( feature ) => <List.Item key={feature}>
-                            {feature}
-                        </List.Item> )}
-                    </List.Wrapper>
-                </> }
+                <h5>What did I do</h5>
+                <List.Wrapper>
+                    {majors.map( ( major ) => <List.Item key={major}>
+                        {major}
+                    </List.Item> )}
+                </List.Wrapper>
             </li>
             <li>
-                <h5>내용</h5>
+                <h5>Details</h5>
                 <ol>
-                    {detail.map( ( detail ) => <li key={detail.id}>
+                    {details.map( ( detail ) => <li key={detail.id}>
                         <h4>{detail.title}</h4>
                         <List.Wrapper>
-                            {detail.content.map( ( content ) =>
+                            {detail.contents.map( ( content ) =>
                                 <List.Item key={content}>{content}</List.Item> )}
                         </List.Wrapper>
                     </li> ) }

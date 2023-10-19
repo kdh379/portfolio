@@ -18,7 +18,7 @@ function EducationItem( props: EducationItemProps ) {
 
     return <li className={style.education}>
         <h2 >{title}</h2>
-        {subTitle && <h3>{subTitle}</h3>}
+        <h3>{subTitle}</h3>
         <Tag>{date}</Tag>
         <List.Wrapper className="mt-4">
             {content.map( ( item, index ) =>

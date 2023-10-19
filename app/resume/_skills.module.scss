@@ -16,17 +16,20 @@
     > hgroup {
         @apply
             flex
-            gap-2
+            items-center
+            gap-x-2
             mb-2;
 
         > svg {
             @apply
-                w-14
-                h-14
+                h-16
+                min-w-[4rem]
                 text-accent-content;
         }
     
         > div {
+            @apply
+                inline;
             > h2 {
                 @apply
                     flex
@@ -47,5 +50,4 @@
             }
         }
     }
-
 }
