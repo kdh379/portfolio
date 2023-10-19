@@ -60,7 +60,7 @@ function ProjectItem( props: ProjectItemProps ) {
                 <h5>Details</h5>
                 <ol>
                     {details.map( ( detail ) => <li key={detail.id}>
-                        <h4>{detail.title}</h4>
+                        <h6>{detail.title}</h6>
                         <List.Wrapper>
                             {detail.contents.map( ( content ) =>
                                 <List.Item key={content}>{content}</List.Item> )}

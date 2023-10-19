@@ -49,7 +49,7 @@ function SkillItem( props: SkillItemProps ) {
 
 export default function Skills() {
 
-    return <Section id="Skills" >
+    return <Section id="Skills">
         <ul className={style.skills}>
             {data.skills.map( ( skill ) => <SkillItem key={skill.id}
                 {...skill} /> )}

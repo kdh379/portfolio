@@ -9,8 +9,7 @@
 
     section:not([data-print-avoid="true"]) {
         @apply
-            break-after-page
-            h-screen;
+            break-inside-avoid;
     }
 
     section[data-print="false"] {
