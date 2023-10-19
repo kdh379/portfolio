@@ -22,7 +22,7 @@
 
         > svg {
             @apply
-                w-14
+                min-w-[3.5rem]
                 h-14
                 text-accent-content;
         }
