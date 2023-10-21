@@ -15,14 +15,14 @@
     ],
     "channels": [
         {
-            "name": "blog",
-            "url": "https://gomban.tistory.com/",
-            "description": "배운 것을 잊지 않기 위해 기록해두고 있는 블로그 입니다."
-        },
-        {
             "name": "resume",
             "url": "https://kdh-portfolio.vercel.app/",
             "description": "직접 구현한 이력서 포트폴리오 웹사이트 입니다."
+        },
+        {
+            "name": "blog",
+            "url": "https://gomban.tistory.com/",
+            "description": "배운 것을 잊지 않기 위해 기록해두고 있는 블로그 입니다."
         },
         {
             "name": "github",

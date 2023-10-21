@@ -46,15 +46,22 @@
 
         }
     }
+}
 
-    &__ul {
-        > li {
-            @apply
-                pt-1;
-        }
+.channel__li {
+    @apply
+        flex
+        items-center
+        gap-x-2
+        tracking-wide;
+    
+    > svg {
+        @apply
+            min-w-[1.5rem]
+            h-6;
     }
 
-    &__link {
+    > div > a {
         @apply
             underline
             break-all
@@ -62,7 +69,7 @@
 
         &:hover, &:focus {
             @apply
-                text-info/75;
+                text-info;
         }
     }
 }

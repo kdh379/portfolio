@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { api, getAPIInfo } from "utils/api";
+import api, { getAPIInfo } from "utils/api";
 
 export const getCategoryList = ( props: TistoryGetCategoryReqParam ) => api( {
     key: getAPIInfo( "tistory.getCategory" ).key,

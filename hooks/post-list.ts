@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { api, getAPIInfo } from "utils/api";
+import api, { getAPIInfo } from "utils/api";
 
 export const getPostList = ( props: TistoryGetPostReqParam ) => api( {
     key: getAPIInfo( "tistory.getPost" ).key,

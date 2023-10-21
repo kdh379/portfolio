@@ -9,31 +9,27 @@ import Section from "components/section";
 import data from "data/profile.json";
 
 const ICON_MAP: {[key: string]: JSX.Element} = {
-    github: <BiLogoGithub size={24} />,
-    blog: <SiTistory size={20} />,
-    resume: <BsFillFileEarmarkPersonFill size={24} />,
+    github: <BiLogoGithub />,
+    blog: <SiTistory />,
+    resume: <BsFillFileEarmarkPersonFill />,
 };
 
 function ChannelItem( props: typeof data.channels[number] ) {
 
     const { name, url, description } = props;
 
-    return <li className="flex items-center gap-x-3">
+    return <li className={style.channel__li}>
         {ICON_MAP[name]}
-        <ol>
-            <li>
-                <a href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={style["about-me__link"]}
-                >
-                    {url}
-                </a>
-            </li>
-            <li>
+        <div>
+            <a href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+            >{url}
+            </a>
+            <p>
                 {description}
-            </li>
-        </ol>
+            </p>
+        </div>
     </li>;
 }
 
@@ -65,7 +61,7 @@ export default function AboutMe() {
                     <tr>
                         <th>Channel</th>
                         <td>
-                            <ul className={style["about-me__ul"]}>
+                            <ul>
                                 {data.channels.map( ( channel ) =>
                                     <ChannelItem key={channel.name}
                                         {...channel} /> )}

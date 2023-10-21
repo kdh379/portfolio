@@ -17,13 +17,13 @@ interface RequestOptions <T_Key extends keyof APIInterface> {
     params?: APIInterface[T_Key]["params"];
 }
 
-// ! Request & Response
+// key에 따른 Request / Response 타입 지정
 interface APIInterface {
     "tistory.getPost": HttpReqRes<TistoryGetPostReqParam, TistoryCommonRes<TistoryGetPostRes>>;
     "tistory.getCategory": HttpReqRes<TistoryGetCategoryReqParam, TistoryCommonRes<TistoryGetCategoryRes>>;
 }
 
-// ! API Request Dict
+// API 정보 정의
 const URLDict: Record<keyof APIInterface, HttpRequestInfo> = {
     "tistory.getPost": {
         url: "/post/list",
@@ -35,15 +35,10 @@ const URLDict: Record<keyof APIInterface, HttpRequestInfo> = {
     },
 };
 
-// ! API Service URL Map
-const SERVICE_URL_MAP: {[key: string]: string} = {
-    "tistory": "https://www.tistory.com/apis",
-};
-
-const getInstance = ( serviceName: keyof APIInterface ) =>
+const getInstance = () =>
 {
     const instance = axios.create( {
-        baseURL: SERVICE_URL_MAP[serviceName.split( "." )[0]],
+        baseURL: "https://www.tistory.com/apis",
         headers: {
             "Content-Type": "application/json;charset=utf-8",
         },
@@ -63,24 +58,25 @@ export const getAPIInfo = <T extends keyof APIInterface>( key: T, params?: APIIn
     return { key, url, method };
 };
 
-export async function api<T_Key extends keyof APIInterface>( {
+export function hasTistoryError( err: AxiosError<TistoryErrorRes> ): err is AxiosError<TistoryErrorRes>
+{
+    if( !err.response?.data || typeof err.response.data !== "object" ) return false;
+
+    // response.data.tistory.error_message가 존재하면 TistoryErrorRes 타입으로 간주
+    return "error_message" in err.response.data.tistory;
+}
+
+export default async function api<T_Key extends keyof APIInterface>( {
     key,
     params,
 }: RequestOptions<T_Key> )
 {
     const { url, method } = getAPIInfo( key, params );
 
-    const response = await getInstance( key ).request<APIInterface[T_Key]["res"]>( {
+    const response = await getInstance().request<APIInterface[T_Key]["res"]>( {
         url,
         method,
     } );
 
     return response.data;
-}
-
-export function hasTistoryError( err: AxiosError<TistoryErrorRes> ): err is AxiosError<TistoryErrorRes>
-{
-    if( !err.response?.data || typeof err.response.data !== "object" ) return false;
-
-    return "error_message" in err.response.data.tistory;
 }

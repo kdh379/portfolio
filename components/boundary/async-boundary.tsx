@@ -27,7 +27,6 @@ export interface AsyncBoundaryErrorProps {
 
 const getTistoryError = ( error: AxiosError<TistoryErrorRes> ): TistoryErrorRes | undefined =>
 {
-    // error.response.data.rulesException이 존재하면 rulesException을 반환하고, 그렇지 않으면 error.response를 반환한다.
     if( !error.response || !hasTistoryError( error ) ) return;
 
     return error.response.data;
