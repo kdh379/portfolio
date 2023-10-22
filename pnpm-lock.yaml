@@ -10,6 +10,7 @@ specifiers:
   '@types/react-dom': ^18.2.8
   '@typescript-eslint/eslint-plugin': ^6.7.0
   '@typescript-eslint/parser': ^6.7.0
+  '@vercel/analytics': ^1.1.1
   autoprefixer: ^10.4.14
   axios: ^1.5.0
   clsx: ^1.2.1
@@ -35,6 +36,7 @@ dependencies:
   '@tanstack/react-query': 4.35.3_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query-devtools': 4.35.3_yto25xasvf6cn47xhscv3d6muq
   '@tanstack/react-query-next-experimental': 5.0.0-alpha.80_hj2z6u7u43r5zmwuxqntfzblce
+  '@vercel/analytics': 1.1.1
   axios: 1.5.0
   clsx: 1.2.1
   daisyui: 3.7.5
@@ -517,6 +519,12 @@ packages:
       '@typescript-eslint/types': 6.7.0
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@vercel/analytics/1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.10.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2470,6 +2478,10 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+
+  /server-only/0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
 
   /set-function-name/2.0.1:
     resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==}
