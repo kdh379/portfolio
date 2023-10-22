@@ -72,6 +72,7 @@ export const Sidebar = memo( () => {
                         alt="Profile"
                         width={300}
                         height={300}
+                        quality={75}
                         priority />
                 </div>
                 <hgroup>
