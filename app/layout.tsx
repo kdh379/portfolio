@@ -4,13 +4,26 @@ import { Inter } from "next/font/google";
 import Providers from "./provider";
 
 import App from "components/app";
+import data from "data/metadata.json";
 import "styles/globals.scss";
 
 const inter = Inter( { subsets: ["latin"] } );
 
 export const metadata: Metadata = {
-    title: "KDH Portfolio",
-    description: "KDH Portfolio",
+    ...data,
+    openGraph: {
+        ...data,
+        type: "website",
+        locale: "ko_KR",
+        images: [
+            {
+                url: data.image,
+                width: 512,
+                height: 512,
+                alt: "Profile",
+            },
+        ],
+    },
 };
 
 export default function RootLayout( {

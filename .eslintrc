@@ -1,152 +1,147 @@
 {
-  "env": {
-      "browser": true,
-      "es6": true,
-      "node": true
-  },
-  "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/recommended",
-      "plugin:import/typescript",
-      "plugin:react/recommended",
-      "plugin:react-hooks/recommended",
-      "plugin:jsx-a11y/recommended"
-  ],
-  "plugins": [ "import", "react", "jsx-a11y" ],
-  "parser": "@typescript-eslint/parser",
-  "settings": {
-      "import/parsers": {
-          "@typescript-eslint/parser": [".ts", ".tsx"]
-      },
-      "import/resolver": {
-          "typescript": {
-              "alwaysTryTypes": true,
-              "project": [
-                  "packages/*/tsconfig.json",
-                  "tsconfig.json"
-              ]
-          }
-      },
-  "react": {
-          "pragma": "React",
-          "version": "detect",
-          "fragment": "Fragment"
-      }
-  },
-  "rules": {
-      "react/jsx-equals-spacing": [2, "never"],
-      "react/jsx-curly-spacing": 2,
-      "react/react-in-jsx-scope": 0,
-      "react/jsx-max-props-per-line": [2, { "maximum": 1 }],
-      "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
-      "indent": "off",
-      "eqeqeq": ["warn", "smart"],
-      "block-spacing": ["error", "always"],
-      "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
-      "semi-spacing": "error",
-      "eol-last": ["error", "never"],
-      "object-curly-spacing": ["error", "always"],
-      // 공백 관련
-      "space-infix-ops": ["warn"],
-      "space-in-parens": ["error", "always"],
-      "space-before-blocks": ["error", "always"],
-      "space-before-function-paren": ["error", "never"],
-      "spaced-comment": [ "error", "always", { "markers": [ "/" ] } ],
-      // const 선호 사용 (값 변경 없는 경우)
-      "prefer-const": "warn",
-      "no-multi-spaces": [ "error", { "ignoreEOLComments": true, "exceptions": { "VariableDeclarator": true } } ],
-      "no-case-declarations": 1,
-      "no-lonely-if": "warn",
-      "no-trailing-spaces": [ "error", { "ignoreComments": true } ],
-      "no-undef-init": "warn",
-      "no-unused-vars": "off",
-      "no-use-before-define": "off",
-      "no-extra-semi": "error",
-      "no-useless-concat": "warn",
-      // styling for comma
-      "comma-dangle": ["error", "always-multiline"],
-      "comma-spacing": ["warn", { "after": true }],
-      "comma-style": ["warn", "last"],
-      // function 관련
-      "func-call-spacing": ["error", "never"],
-      "function-call-argument-newline": "off",
-      "function-paren-newline": ["error", "consistent"],
-      // 기타
-      "key-spacing": ["warn", {
-          "afterColon": true,
-          "beforeColon": false
-      }],
-      "linebreak-style": "off",
-      "no-multiple-empty-lines": ["error", { "max": 1 }],
-
-      // arrow function 관련
-      // 개발 사용성 문제로 제거
-      // "arrow-body-style": ["error", "as-needed"],
-      "arrow-parens": ["warn", "always"],
-      "arrow-spacing": ["error", { "before": true, "after": true }],
-
-      // typescript
-      "@typescript-eslint/type-annotation-spacing": 2,
-      "@typescript-eslint/indent": [ "error", 4, {
-          "MemberExpression": 1,
-          "SwitchCase": 1,
-          "VariableDeclarator": "first",
-          "ImportDeclaration": "first",
-          "ObjectExpression": "first",
-          "ArrayExpression": "first",
-          "CallExpression": { "arguments": "first" },
-          "FunctionDeclaration": { "parameters": "first" }
-      } ],
-      "@typescript-eslint/adjacent-overload-signatures": "off",
-      "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "_.*", "argsIgnorePattern": "_.*", "args": "none" }],
-      "@typescript-eslint/member-delimiter-style": ["error", {
-          "multiline": {
-              "delimiter": "semi",
-              "requireLast": true
-          },
-          "singleline": {
-              "delimiter": "comma",
-              "requireLast": false
-          }
-      }],
-      "@typescript-eslint/no-empty-interface": [
-          "error",
-          { "allowSingleExtends": true }
-      ],
-
-      // import
-      "import/default": "off",
-      "import/no-named-as-default-member": "off",
-      "import/order": [
-          "error",
-          {
-              "groups": [
-                  "builtin",
-                  "external",
-                  [
-                      "parent",
-                      "sibling"
-                  ],
-                  "index"
-              ],
-              "pathGroups": [
-                  {
-                      "pattern": "react",
-                      "group": "external",
-                      "position": "before"
-                  }
-              ],
-              "pathGroupsExcludedImportTypes": [
-                  "react"
-              ],
-              "alphabetize": {
-                  "order": "asc",
-                  "caseInsensitive": true
-              },
-              "newlines-between": "always"
-          }
-      ]
-  }
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [ "import", "react", "jsx-a11y" ],
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": [
+                    "packages/*/tsconfig.json",
+                    "tsconfig.json"
+                ]
+            }
+        },
+    "react": {
+            "pragma": "React",
+            "version": "detect",
+            "fragment": "Fragment"
+        }
+    },
+    "rules": {
+        "react/jsx-equals-spacing": [2, "never"],
+        "react/jsx-curly-spacing": 2,
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-max-props-per-line": [2, { "maximum": 1 }],
+        "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
+        "indent": "off",
+        "eqeqeq": ["warn", "smart"],
+        "block-spacing": ["error", "always"],
+        "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+        "semi-spacing": "error",
+        "eol-last": ["error", "never"],
+        "object-curly-spacing": ["error", "always"],
+        // 공백 관련
+        "space-infix-ops": ["warn"],
+        "space-in-parens": ["error", "always"],
+        "space-before-blocks": ["error", "always"],
+        "space-before-function-paren": ["error", "never"],
+        "spaced-comment": [ "error", "always", { "markers": [ "/" ] } ],
+        // const 선호 사용 (값 변경 없는 경우)
+        "prefer-const": "warn",
+        "no-multi-spaces": [ "error", { "ignoreEOLComments": true, "exceptions": { "VariableDeclarator": true } } ],
+        "no-case-declarations": 1,
+        "no-lonely-if": "warn",
+        "no-trailing-spaces": [ "error", { "ignoreComments": true } ],
+        "no-undef-init": "warn",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "no-extra-semi": "error",
+        "no-useless-concat": "warn",
+        // styling for comma
+        "comma-dangle": ["error", "always-multiline"],
+        "comma-spacing": ["warn", { "after": true }],
+        "comma-style": ["warn", "last"],
+        // function 관련
+        "func-call-spacing": ["error", "never"],
+        "function-call-argument-newline": "off",
+        "function-paren-newline": ["error", "consistent"],
+        // 기타
+        "key-spacing": ["warn", {
+            "afterColon": true,
+            "beforeColon": false
+        }],
+        "linebreak-style": "off",
+        "no-multiple-empty-lines": ["error", { "max": 1 }],
+        // "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": ["warn", "always"],
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        // typescript
+        "@typescript-eslint/type-annotation-spacing": 2,
+        "@typescript-eslint/indent": [ "error", 4, {
+            "MemberExpression": 1,
+            "SwitchCase": 1,
+            "VariableDeclarator": "first",
+            "ImportDeclaration": "first",
+            "ObjectExpression": "first",
+            "ArrayExpression": "first",
+            "CallExpression": { "arguments": "first" },
+            "FunctionDeclaration": { "parameters": "first" }
+        } ],
+        "@typescript-eslint/adjacent-overload-signatures": "off",
+        "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "_.*", "argsIgnorePattern": "_.*", "args": "none" }],
+        "@typescript-eslint/member-delimiter-style": ["error", {
+            "multiline": {
+                "delimiter": "semi",
+                "requireLast": true
+            },
+            "singleline": {
+                "delimiter": "comma",
+                "requireLast": false
+            }
+        }],
+        "@typescript-eslint/no-empty-interface": [
+            "error",
+            { "allowSingleExtends": true }
+        ],
+         // import
+        "import/default": "off",
+        "import/no-named-as-default-member": "off",
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    [
+                        "parent",
+                        "sibling"
+                    ],
+                    "index"
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": [
+                    "react"
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                },
+                "newlines-between": "always"
+            }
+        ]
+    }
 }
