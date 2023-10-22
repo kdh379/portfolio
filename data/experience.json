@@ -35,7 +35,7 @@
                             "PNPM"
                         ],
                         "build": [
-                            "ESBuild"
+                            "astro"
                         ],
                         "ci/cd": [
                             "GitLab"
@@ -101,7 +101,7 @@
                             "PNPM"
                         ],
                         "build": [
-                            "Babel"
+                            "Webpack"
                         ],
                         "ci/cd": [
                             "GitLab"
