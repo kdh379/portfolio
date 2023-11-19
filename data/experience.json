@@ -15,7 +15,7 @@
                     "id": 0,
                     "name": "InnoManager",
                     "subtitle": "사내 솔루션의 리포팅 및 모니터링을 시각화하여 제공하는 웹 애플리케이션",
-                    "period":"2023.03 ~ 2023.10",
+                    "period":"2023.03 ~ 현재",
                     "techStack": {
                         "core": [
                             "TypeScript",
@@ -36,9 +36,6 @@
                         ],
                         "build": [
                             "astro"
-                        ],
-                        "ci/cd": [
-                            "GitLab"
                         ]
                     },
                     "majors": [
@@ -102,9 +99,6 @@
                         ],
                         "build": [
                             "Webpack"
-                        ],
-                        "ci/cd": [
-                            "GitLab"
                         ]
                     },
                     "majors": [
