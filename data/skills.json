@@ -73,12 +73,12 @@
             "keywords": [
                 "함수형 컴포넌트",
                 "Hooks",
+                "Next.js",
                 "Context API",
                 "Recoil",
                 "React-Query",
                 "Concurrent UI",
-                "framer-motion",
-                "echarts"
+                "framer-motion"
             ],
             "details": [
                 "함수형 컴포넌트 기반으로 컴포넌트를 작성합니다.",
@@ -115,6 +115,7 @@
                 "Linux",
                 "JAVA",
                 "J2EE",
+                "Spring Boot",
                 "docker"
             ]
         }
