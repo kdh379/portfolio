@@ -17,7 +17,7 @@
         {
             "name": "resume",
             "url": "https://kdh-portfolio.vercel.app/",
-            "description": "직접 구현한 이력서 포트폴리오 웹사이트 입니다."
+            "description": "Next.js로 구현한 이력서입니다."
         },
         {
             "name": "blog",
