@@ -17,7 +17,13 @@
     "gomban",
     "Hyeon",
     "Mybatis",
-    "JDBC"
+    "JDBC",
+    "astro",
+    "flexbox",
+    "parens",
+    "paren",
+    "linebreak",
+    "singleline",
   ],
   "cSpell.ignorePaths": [
     "package-lock.json",
