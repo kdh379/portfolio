@@ -106,15 +106,16 @@
             "id": 7,
             "title": "Knowledge",
             "keywords": [
-                "Git",
-                "Notion",
-                "Markdown",
                 "Figma",
-                "Linux",
                 "JAVA",
                 "J2EE",
                 "Spring Boot",
-                "docker"
+                "SQL",
+                "Git",
+                "Notion",
+                "Markdown",
+                "Linux",
+                "Docker"
             ]
         }
     ]
