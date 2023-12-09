@@ -9,23 +9,28 @@ type ExperienceItemProps = typeof data.experience[number];
 type ProjectItemProps = ExperienceItemProps["project"][number];
 
 const TECH_STACK_LABEL = {
+    framework: "프레임워크",
     core: "코어",
     state: "상태 관리",
     styling: "스타일링",
     package: "패키지",
-    build: "빌드",
-    "ci/cd": "CI/CD",
+    visualization: "시각화",
 } as const;
 
 const hasTechStackKey = ( key: string ): key is keyof typeof TECH_STACK_LABEL =>
     Object.keys( TECH_STACK_LABEL ).includes( key );
+
+const getTechStackLabel = ( key: string ) => {
+    if( !hasTechStackKey( key ) ) return key;
+
+    return TECH_STACK_LABEL[key];
+};
 
 function ProjectItem( props: ProjectItemProps ) {
 
     const {
         majors,
         period,
-        details,
         name,
         subtitle,
         techStack,
@@ -44,7 +49,7 @@ function ProjectItem( props: ProjectItemProps ) {
                 <List.Wrapper>
                     {Object.entries( techStack ).map( ( [key, value] ) =>
                         <List.Item key={key}>
-                            <p>{hasTechStackKey( key ) && TECH_STACK_LABEL[key]} : {value.join( ", " )}</p>
+                            <p>{getTechStackLabel( key )} : {value.join( ", " )}</p>
                         </List.Item> )}
                 </List.Wrapper>
             </li>
@@ -55,18 +60,6 @@ function ProjectItem( props: ProjectItemProps ) {
                         {major}
                     </List.Item> )}
                 </List.Wrapper>
-            </li>
-            <li>
-                <h5>Details</h5>
-                <ol>
-                    {details.map( ( detail ) => <li key={detail.id}>
-                        <h6>{detail.title}</h6>
-                        <List.Wrapper>
-                            {detail.contents.map( ( content ) =>
-                                <List.Item key={content}>{content}</List.Item> )}
-                        </List.Wrapper>
-                    </li> ) }
-                </ol>
             </li>
         </ul>
     </li>;
