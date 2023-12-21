@@ -1,6 +1,5 @@
 import { Hydrate, dehydrate } from "@tanstack/react-query";
 
-import style from "./_blog.module.scss";
 import BlogPost from "./blog-post";
 
 import AsyncBoundary from "components/boundary/async-boundary";
@@ -52,14 +51,14 @@ async function HydratedBlog() {
 
     return (
         <Hydrate state={dehydratedState}>
-            <hgroup className={style.blog__header}>
+            <hgroup className="flex items-center justify-between">
                 <h2>최근 포스트</h2>
                 <a
                     href="https://gomban.tistory.com"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <Button className="p-2">전체보기</Button>
+                    <Button className="p-2 font-bold">전체보기</Button>
                 </a>
             </hgroup>
             <BlogPost {...params} />

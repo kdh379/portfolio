@@ -18,15 +18,16 @@ function BlogPostItem( props: BlogPostItemProps ) {
         category,
     } = props;
 
-    return <li>
+    return <li className={style.blog__item}>
         <a
             href={postUrl}
             target="_blank"
             rel="noopener noreferrer"
+            className="flex h-full flex-col items-start"
         >
-            <Tag>{category}</Tag>
+            <Tag className="mb-2">{category}</Tag>
             <h3>{title}</h3>
-            <p>{date}</p>
+            <p className="mt-auto text-sm">{date}</p>
         </a>
     </li>;
 }
@@ -43,7 +44,7 @@ export default function BlogPost( props: TistoryGetPostReqParam ) {
     const { data } = usePostList( props );
     const { data: categoryData } = useCategoryList( props );
 
-    return <ul className={style.blog__post}>
+    return <ul className="mb-8 mt-4 grid grid-cols-2 gap-4 tablet:grid-cols-4">
         {data?.tistory.item.posts.slice( 0, 4 ).map( ( post ) => {
             return <BlogPostItem key={post.id}
                 {...post}

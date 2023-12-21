@@ -1,5 +1,3 @@
-import style from "./_education.module.scss";
-
 import List from "components/list/list";
 import Section from "components/section";
 import Tag from "components/tag";
@@ -16,11 +14,11 @@ function EducationItem( props: EducationItemProps ) {
         subTitle,
     } = props;
 
-    return <li className={style.education}>
-        <h2 >{title}</h2>
-        <h3>{subTitle}</h3>
+    return <li className="flex flex-col p-4 mt-4 transition-colors rounded-md bg-base-200 hover:bg-base-300">
+        <h2>{title}</h2>
+        <h3 className="text-lg opacity-75">{subTitle}</h3>
         <Tag>{date}</Tag>
-        <List.Wrapper className="mt-4">
+        <List.Wrapper className="mt-2">
             {content.map( ( item, index ) =>
                 <List.Item key={index}>{item}</List.Item> )}
         </List.Wrapper>
@@ -29,8 +27,7 @@ function EducationItem( props: EducationItemProps ) {
 
 export default function Education() {
 
-    return <Section id="Education"
-        printAvoid>
+    return <Section id="Education">
         <ul>
             {EducationItemProps.education.map( ( education ) =>
                 <EducationItem key={education.id}

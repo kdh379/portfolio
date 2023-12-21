@@ -1,6 +1,8 @@
-import { BiDotsHorizontalRounded, BiLogoCss3, BiLogoHtml5, BiLogoJavascript, BiLogoNodejs, BiLogoReact, BiLogoTypescript, BiPalette } from "react-icons/bi";
 
-import style from "./_skills.module.scss";
+"use client";
+
+import { BiDotsHorizontalRounded, BiLogoCss3, BiLogoHtml5, BiLogoJavascript, BiLogoNodejs, BiLogoReact, BiLogoTypescript, BiPalette } from "react-icons/bi";
+import { IconContext } from "react-icons/lib";
 
 import List from "components/list/list";
 import Section from "components/section";
@@ -29,12 +31,14 @@ function SkillItem( props: SkillItemProps ) {
         keywords,
     } = props;
 
-    return <li className={style["skill-item"]}>
-        <hgroup>
-            {ICON_MAP[id]}
+    return <li className="p-2 transition-colors rounded-md bg-base-200 hover:bg-base-300">
+        <hgroup className="flex items-center mb-3 gap-x-2">
+            <IconContext.Provider value={{ className: "min-w-[3.5rem] h-14 text-accent-content" }}>
+                {ICON_MAP[id]}
+            </IconContext.Provider>
             <div>
-                <h2>{title}</h2>
-                <ol>
+                <h2 className="text-xl font-bold text-accent-content">{title}</h2>
+                <ol className="flex flex-wrap mt-1 text-sm gap-x-2 gap-y-3">
                     {keywords.map( ( keyword ) => <li key={keyword}>
                         <Tag>{keyword}</Tag>
                     </li> )}
@@ -50,7 +54,7 @@ function SkillItem( props: SkillItemProps ) {
 export default function Skills() {
 
     return <Section id="Skills">
-        <ul className={style.skills}>
+        <ul className="flex flex-col space-y-4">
             {data.skills.map( ( skill ) => <SkillItem key={skill.id}
                 {...skill} /> )}
         </ul>

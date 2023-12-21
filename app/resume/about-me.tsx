@@ -18,12 +18,13 @@ function ChannelItem( props: typeof data.channels[number] ) {
 
     const { name, url, description } = props;
 
-    return <li className={style.channel__li}>
+    return <li className="flex items-center tracking-wide gap-x-2">
         {ICON_MAP[name]}
         <div>
             <a href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline break-all hover:text-info active:text-info/50"
             >{url}
             </a>
             <p>
@@ -36,15 +37,15 @@ function ChannelItem( props: typeof data.channels[number] ) {
 export default function AboutMe() {
 
     return <Section id="About Me">
-        <div className={style["about-me"]}>
-            <h1>{data.title}</h1>
+        <div className="flex flex-col mb-4">
+            <h2 className="mb-4">{data.title}</h2>
             <h2>Introduction</h2>
-            <List.Wrapper>
+            <List.Wrapper className="mb-4">
                 {data.introduction.map( ( introduction ) =>
                     <List.Item key={introduction}>{introduction}</List.Item> )}
             </List.Wrapper>
             <h2>Contact</h2>
-            <table>
+            <table className={style.contact__table}>
                 <tbody>
                     <tr>
                         <th>Birthday</th>

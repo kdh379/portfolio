@@ -1,5 +1,3 @@
-import style from "./_experience.module.scss";
-
 import List from "components/list/list";
 import Section from "components/section";
 import Tag from "components/tag";
@@ -36,10 +34,10 @@ function ProjectItem( props: ProjectItemProps ) {
         techStack,
     } = props;
 
-    return <li className={style.project}>
+    return <li className="p-4 mb-4 transition-colors rounded-md bg-base-200 hover:bg-base-300">
         <h4>{name}</h4>
-        <p>{subtitle}</p>
-        <ul>
+        <p className="mb-4 font-medium tracking-wide transition-colors hover:text-accent-content">{subtitle}</p>
+        <ul className="space-y-4">
             <li>
                 <h5>Period</h5>
                 <Tag>{period}</Tag>
@@ -75,18 +73,18 @@ function ExperienceItem( props: ExperienceItemProps ) {
         task,
     } = props;
 
-    return <article className={style.experience}>
-        <hgroup>
+    return <article>
+        <hgroup className="flex flex-col mb-4">
             <h2>{company}</h2>
-            <p>{belong}</p>
+            <p className="mb-2 text-sm font-medium tracking-wide opacity-75">{belong}</p>
             <Tag>{period}</Tag>
         </hgroup>
         <h3>Description</h3>
-        <List.Wrapper>
+        <List.Wrapper className="mb-4">
             {task.map( ( task ) => <List.Item key={task}>{task}</List.Item> )}
         </List.Wrapper>
         <h3>Projects</h3>
-        <ul>
+        <ul className="mb-4">
             {project.map( ( project ) =>
                 <ProjectItem key={project.id}
                     {...project} /> )}
@@ -96,8 +94,7 @@ function ExperienceItem( props: ExperienceItemProps ) {
 
 export default function Experience() {
 
-    return <Section id="Experience"
-        printAvoid>
+    return <Section id="Experience">
         {data.experience.map( ( experience ) =>
             <ExperienceItem key={experience.id}
                 {...experience} /> )}
