@@ -5,8 +5,12 @@
         cursor-pointer;
 
     &:hover, &:focus {
-        @apply bg-base-300
+        @apply bg-base-200
             text-accent-content;
+    }
+
+    &:active {
+        @apply bg-base-300;
     }
 
     // disabled 상태일 때
