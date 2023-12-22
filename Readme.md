@@ -29,8 +29,3 @@
     - Dark / Light 모드 지원
     - 반응형 디자인
 - 시멘틱 마크업
-
-## 4. 프로젝트 개요
-
-url : https://kdh-portfolio.vercel.app/
-
